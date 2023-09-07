@@ -1,4 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
+import { ConfigService } from '../config/config.service';
 import {
   HttpClient,
   HttpErrorResponse,
@@ -10,22 +11,19 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Menu } from '../../interfaces/menu/menu';
-import { ApplicationProperties } from 'src/assets/application.properties';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MenuService {
 
-  private properties = new ApplicationProperties()
-
-  public urlMenu = this.properties.urlMenu
+  public urlMenu = this.appProperties.config?.urlMenu;
 
   menu:Menu = {
     menus:[]
   }
 
-  constructor( private http: HttpClient) {}
+  constructor(private appProperties: ConfigService, private http: HttpClient) {}
 
   getMenu(
     categoria: number

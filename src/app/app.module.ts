@@ -8,7 +8,12 @@ import { LoginModule } from './modules/login/login.module';
 import { InicioComponent } from './modules/inicio/componentes/inicio.component';
 import { InicioModule } from './modules/inicio/inicio.module';
 import { AppProperties } from './core/interfaces/appProperties/app-properties';
+import { ConfigService } from './core/services/config/config.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+
+export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
+  return () => injector.get(ConfigService).loadConfiguration();
+}
 
 @NgModule({
   declarations: [
@@ -23,6 +28,13 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
     AppRoutingModule
   ],
   providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: ConfigLoader,
+      deps: [Injector],
+      multi: true,
+    
+    },
     // {
     //   provide: HTTP_INTERCEPTORS,
     //   useClass: ErrorInterceptor,
