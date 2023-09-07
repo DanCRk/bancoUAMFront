@@ -1,100 +1,92 @@
+<!--=============== HEADER ===============-->
 <header class="header">
   <nav class="nav container">
     <div class="nav__data">
-      <a href="#" class="nav__logo"> <i class="ri-planet-line"></i> Banco UAM </a>
+      <a href="#" class="nav__logo"> <i class="ri-bank-fill"></i> BBUAM </a>
 
-      <div class="nav__toggle" id="nav-toggle">
+      <div
+        class="nav__toggle"
+        id="nav-toggle"
+        (click)="showMenu('nav-toggle', 'nav-menu')"
+      >
         <i class="ri-menu-line nav__burger"></i>
         <i class="ri-close-line nav__close"></i>
       </div>
     </div>
 
-    <!--=============== NAV MENU ===============-->
     <div class="nav__menu" id="nav-menu">
       <ul class="nav__list">
-        <li><a href="#" class="nav__link">Inicio</a></li>
-
-        <li><a href="#" class="nav__link">Company</a></li>
-
-        <!--=============== DROPDOWN 1 ===============-->
-        <li class="dropdown__item">
+        <li class="dropdown__item" *ngFor="let menu of menu.menues">
           <div class="nav__link">
-            Analytics <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+            {{ menu.titulo }}
+            <i
+              [ngClass]="{
+                'ri-arrow-down-s-line dropdown__arrow': !!menu.submenu
+              }"
+            ></i>
           </div>
 
           <ul class="dropdown__menu">
-            <li>
-              <a href="#" class="dropdown__link">
-                <i class="ri-pie-chart-line"></i> Overview
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="dropdown__link">
-                <i class="ri-arrow-up-down-line"></i> Transactions
-              </a>
-            </li>
-
-            <!--=============== DROPDOWN SUBMENU ===============-->
-            <li class="dropdown__subitem">
+            <li class="dropdown__subitem" *ngFor="let submenu of menu.submenu">
               <div class="dropdown__link">
-                <i class="ri-bar-chart-line"></i> Reports
-                <i class="ri-add-line dropdown__add"></i>
+                {{ submenu.titulo }}
+                <i
+                  [ngClass]="{
+                    'ri-add-line dropdown__arrow': !!submenu.subsubmenu
+                  }"
+                ></i>
               </div>
 
-              <ul class="dropdown__submenu">
+              <ul
+                class="dropdown__submenu"
+                *ngFor="let subsubmenu of submenu.subsubmenu"
+              >
                 <li>
-                  <a href="#" class="dropdown__sublink">
-                    <i class="ri-file-list-line"></i> Documents
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#" class="dropdown__sublink">
-                    <i class="ri-cash-line"></i> Payments
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#" class="dropdown__sublink">
-                    <i class="ri-refund-2-line"></i> Refunds
-                  </a>
+                  <div class="dropdown__link">
+                    {{ subsubmenu.titulo }}
+                  </div>
                 </li>
               </ul>
             </li>
           </ul>
         </li>
+      </ul>
+    </div>
 
-        <li><a href="#" class="nav__link">Products</a></li>
-
-        <!--=============== DROPDOWN 2 ===============-->
-        <li class="dropdown__item">
-          <div class="nav__link">
-            Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-          </div>
-
-          <ul class="dropdown__menu">
-            <li>
-              <a href="#" class="dropdown__link">
-                <i class="ri-user-line"></i> Profiles
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="dropdown__link">
-                <i class="ri-lock-line"></i> Accounts
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="dropdown__link">
-                <i class="ri-message-3-line"></i> Messages
-              </a>
-            </li>
-          </ul>
+    <div class="nav__data">
+      <ul class="header__actions__ulist">
+        <li
+          class="header__actions__list header__actions--tablet-hidden header__actions--mobile-hidden"
+        >
+          <a class="header__actions__item__link header__createaccount">
+            <i style="margin-right: 8px" class="ri-user-add-line"></i>
+            <span class="cursor_pointer">Hazte cliente</span>
+          </a>
         </li>
 
-        <li><a href="#" class="nav__link">Contact</a></li>
+        <li
+          itemprop="name"
+          class="header__actions__list header__actions--tablet-left"
+        >
+          <div data-component="access">
+            <a
+              class="header__actions__item__link header__actions--menu header__access"
+            >
+              <span
+                class="header__actions__item__link__text header__access__text--desktop"
+                >Acceso</span
+              >
+              <span
+                class="header__actions__item__link__text header__access__text--tablet"
+                >Acceso</span
+              >
+              <span
+                class="header__actions__item__link__text header__access__text--mobile"
+                >Acceso</span
+              >
+            </a>
+          </div>
+        </li>
       </ul>
     </div>
   </nav>
