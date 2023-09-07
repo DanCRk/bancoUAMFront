@@ -6,7 +6,8 @@ import { InicioComponent } from './modules/inicio/componentes/inicio.component';
 const routes: Routes = [
   {
     path:'',
-    component: InicioComponent
+    redirectTo: 'inicio',
+    pathMatch: 'full'
   },
   {
     path:'inicio',
@@ -24,7 +25,6 @@ const routes: Routes = [
     title:'Pagina no encontrada'
   }
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

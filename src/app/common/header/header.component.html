@@ -16,30 +16,30 @@
 
     <div class="nav__menu" id="nav-menu">
       <ul class="nav__list">
-        <li class="dropdown__item" *ngFor="let menu of menu.menues">
+        <li class="dropdown__item" *ngFor="let menu of menu.menus">
           <div class="nav__link">
             {{ menu.titulo }}
             <i
               [ngClass]="{
-                'ri-arrow-down-s-line dropdown__arrow': !!menu.submenu
+                'ri-arrow-down-s-line dropdown__arrow': !!menu.submenus
               }"
             ></i>
           </div>
 
           <ul class="dropdown__menu">
-            <li class="dropdown__subitem" *ngFor="let submenu of menu.submenu">
+            <li class="dropdown__subitem" *ngFor="let submenu of menu.submenus">
               <div class="dropdown__link">
                 {{ submenu.titulo }}
                 <i
                   [ngClass]="{
-                    'ri-add-line dropdown__arrow': !!submenu.subsubmenu
+                    'ri-add-line dropdown__arrow': !!submenu.subsubmenus
                   }"
                 ></i>
               </div>
 
               <ul
                 class="dropdown__submenu"
-                *ngFor="let subsubmenu of submenu.subsubmenu"
+                *ngFor="let subsubmenu of submenu.subsubmenus"
               >
                 <li>
                   <div class="dropdown__link">
@@ -68,7 +68,7 @@
           itemprop="name"
           class="header__actions__list header__actions--tablet-left"
         >
-          <div data-component="access">
+          <div data-component="access" (click)="prueba()">
             <a
               class="header__actions__item__link header__actions--menu header__access"
             >

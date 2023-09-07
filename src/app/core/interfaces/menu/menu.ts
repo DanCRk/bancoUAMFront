@@ -1,20 +1,20 @@
 export interface Menu {
-  menues: Array<Menues>;
+  menus: Array<Menus>;
 }
 
-export interface Menues {
+export interface Menus {
   titulo: string;
   url: string;
-  submenu?: Array<Submenu>;
+  submenus?: Array<Submenu>;
 }
 
 export interface Submenu {
   titulo: string;
   url: string;
-  subsubmenu?: Array<Subsubmenu>;
+  subsubmenus?: Array<Subsubmenu>;
 }
 
 export interface Subsubmenu {
-    titulo: string;
-    url: string;
-  }
+  titulo: string;
+  url: string;
+}
