@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Menu } from 'src/app/core/interfaces/menu/menu';
+import { Router } from '@angular/router';
 import { MenuService } from 'src/app/core/services/menu/menu.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { MenuService } from 'src/app/core/services/menu/menu.service';
 export class HeaderComponent {
   menu:Menu ;
 
-  constructor(private menuService: MenuService) {
+  constructor(private menuService: MenuService,private router:Router) {
     this.menu = menuService.menu;
   }
 
@@ -23,4 +24,8 @@ export class HeaderComponent {
       toggle.classList.toggle('show-icon');
     });
   };
+
+  navegar(url:string){
+    this.router.navigateByUrl(url)
+  }
 }
