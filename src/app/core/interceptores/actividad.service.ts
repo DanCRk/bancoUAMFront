@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Idle } from 'idlejs';
-import { ConfigService } from '../services/config/config.service';
 
 
 @Injectable({
@@ -9,7 +8,7 @@ import { ConfigService } from '../services/config/config.service';
 })
 export class ActividadService {
 
-  constructor(private route:Router,private conifigService: ConfigService) {}
+  constructor(private route:Router) {}
 
   urlsis = "inicio"
 

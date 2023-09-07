@@ -1,5 +1,4 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { ConfigService } from '../config/config.service';
 import {
   HttpClient,
   HttpErrorResponse,
@@ -11,17 +10,20 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {  Token } from '../../interfaces/token/token';
+import { ApplicationProperties } from 'src/assets/application.properties';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenService {
 
-  private urlToken = this.appProperties.config?.urlToken
+  private properties = new ApplicationProperties()
 
-  private user:string = this.appProperties.config.user
+  private urlToken = this.properties.urlToken
 
-  private pass:string = this.appProperties.config.pass
+  private user:string = this.properties.user
+
+  private pass:string = this.properties.pass
 
   token:Token = {
     timeout:'',
@@ -29,7 +31,7 @@ export class TokenService {
     usuario:''
   }
 
-  constructor(private appProperties: ConfigService, private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getToken(
   ): Observable<Token> {

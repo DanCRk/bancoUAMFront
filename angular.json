@@ -23,7 +23,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/assets/appProperties.json"
+              "src/assets/application.properties.ts"
             ],
             "styles": [
               "src/styles.css"
