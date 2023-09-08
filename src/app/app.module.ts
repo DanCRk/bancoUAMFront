@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonsModule } from './common/commons.module';
 import { LoginModule } from './modules/login/login.module';
-import { InicioComponent } from './modules/inicio/componentes/inicio.component';
 import { InicioModule } from './modules/inicio/inicio.module';
 import { AppProperties } from './core/interfaces/appProperties/app-properties';
 import { ConfigService } from './core/services/config/config.service';
@@ -17,7 +16,7 @@ export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

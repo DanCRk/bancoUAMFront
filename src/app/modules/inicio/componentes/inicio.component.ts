@@ -26,6 +26,6 @@ export class InicioComponent implements OnInit{
       },
     });
 
-    this.menu.setDatosMenu(2)
+    this.menu.setDatosMenu(1)
   }
 }

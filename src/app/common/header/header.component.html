@@ -17,7 +17,7 @@
     <div class="nav__menu" id="nav-menu">
       <ul class="nav__list">
         <li class="dropdown__item" *ngFor="let menu of menu.menus">
-          <div class="nav__link">
+          <div class="nav__link" (click)="navegar(menu.url)">
             {{ menu.titulo }}
             <i
               [ngClass]="{
@@ -58,7 +58,7 @@
         <li
           class="header__actions__list header__actions--tablet-hidden header__actions--mobile-hidden"
         >
-          <a class="header__actions__item__link header__createaccount" (click)="navegar('/register')">
+          <a class="header__actions__item__link header__createaccount" (click)="navegar('inicio/registro')">
             <i style="margin-right: 8px" class="ri-user-add-line"></i>
             <span class="cursor_pointer">Hazte cliente</span>
           </a>
@@ -68,7 +68,7 @@
           itemprop="name"
           class="header__actions__list header__actions--tablet-left"
         >
-          <div data-component="access" (click)="prueba()">
+          <div data-component="access" (click)="navegar('inicio/login')">
             <a
               class="header__actions__item__link header__actions--menu header__access"
             >
