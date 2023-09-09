@@ -13,6 +13,10 @@ import { TokenService } from 'src/app/core/services/token/token-service.service'
 export class HeaderComponent implements OnInit {
   menu: Menu;
 
+  loginOrcuenta = false
+
+  nombre = ''
+
   constructor(
     private menuService: MenuService,
     private router: Router,
@@ -35,6 +39,19 @@ export class HeaderComponent implements OnInit {
     }
 
     this.menuService.setDatosMenu(1);
+
+    this.menuService.actualizatBotonesDerecha.subscribe((e)=>{
+      if(e==1){
+        this.loginOrcuenta = false
+      }
+      if(e==2){
+        this.loginOrcuenta = true
+      }
+    })
+
+    this.menuService.actualizatUsuario.subscribe((e)=>{
+      this.nombre = e
+    })
   }
 
   showMenu = (toggleId: string, navId: string) => {
@@ -51,7 +68,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl(url);
   }
 
-  prueba() {
-    console.log(this.menu.menus[1]);
+  clearSesion() {
+    sessionStorage.clear()
   }
 }

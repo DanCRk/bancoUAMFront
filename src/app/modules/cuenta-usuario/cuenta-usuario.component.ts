@@ -17,6 +17,7 @@ export class CuentaUsuarioComponent implements OnInit{
       this.util.enviarAlerta('error',this.util.colorWarning,"Inicia sesion primero","No hay una sesion iniciada por favor intente en el login")
       this.router.navigateByUrl("inicio")
     }else{
+      this.menuService.actualizatUsuario.emit("afsfgdsg")
       this.menuService.setDatosMenu(2)
     }
     

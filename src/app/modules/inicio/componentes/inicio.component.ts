@@ -10,7 +10,12 @@ import { TokenService } from 'src/app/core/services/token/token-service.service'
 })
 export class InicioComponent implements OnInit{
 
-  ngOnInit(): void {
+  constructor(
+    private menuService: MenuService,
+  ) {
+  }
 
+  ngOnInit(): void {
+    this.menuService.setDatosMenu(1)
   }
 }

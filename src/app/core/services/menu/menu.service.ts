@@ -17,6 +17,11 @@ import { Menu } from '../../interfaces/menu/menu';
 })
 export class MenuService {
 
+  actualizatBotonesDerecha = new EventEmitter<number>();
+  actualizatUsuario = new EventEmitter<string>();
+
+  usuario:string
+
   private urlMenu = this.appProperties.config?.urlMenu;
 
   menu:Menu = {
@@ -45,9 +50,10 @@ export class MenuService {
   }
 
   setDatosMenu(categoria: number) {
-    this.menu.menus.length = 0
     this.getMenu(categoria).subscribe({
       next: (e) => {
+        this.actualizatBotonesDerecha.emit(categoria)
+        this.menu.menus.length = 0
         this.menu.menus.push(...e.menus)
       },
       error: (e) => {

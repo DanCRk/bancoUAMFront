@@ -45,11 +45,6 @@ const routes: Routes = [
     title: 'Registro | BBUAM',
   },
   {
-    path: 'inicio/registro/:tipo',
-    component: RegistroComponent,
-    title: 'Registro | BBUAM',
-  },
-  {
     path: 'cuenta/inicio',
     component: CuentaUsuarioComponent,
     title: 'Cuenta | BBUAM',
