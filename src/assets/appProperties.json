@@ -3,5 +3,6 @@
     "user":"us_bancouam",
     "pass":"bancouam123",
     "urlLogin":"http://bancouam.tplinkdns.com:8008/bancoUAM/seguridad/login",
-    "urlMenu":"http://bancouam.tplinkdns.com:8011/bancoUAM/menus"
+    "urlMenu":"http://bancouam.tplinkdns.com:8011/bancoUAM/menus",
+    "urlRegistro":"http://bancouam.tplinkdns.com:8010/bancoUAM/seguridad/registro"
 }

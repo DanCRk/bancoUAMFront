@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cuenta } from 'src/app/core/interfaces/cuentas/cuentas';
+import { InicioCuentaService } from 'src/app/core/services/inicioCuenta/iniciocuenta.service';
 
 @Component({
   selector: 'app-todas-cuentas',
@@ -9,29 +10,21 @@ import { Cuenta } from 'src/app/core/interfaces/cuentas/cuentas';
 })
 export class TodasCuentasComponent implements OnInit{
 
-  constructor(private router:Router,private route:ActivatedRoute){
+  constructor(private router:Router,private route:ActivatedRoute,private cuentaService:InicioCuentaService){
     
   }
   ngOnInit(): void {
     let i = this.route.snapshot.params['tipo']
     console.log(i)
+    this.cuentas = this.cuentaService.cuentas
   }
 
   cuentas:Array<Cuenta> = [
-    {
-      imagen:"https://tubalboaconsentido.gob.pa/wp-content/uploads/2022/05/banca_en_linea-1024x583.jpeg",
-      titulo:"Cuenta Basica",
-      tipo:'1',
-      puntos:[
-        "La cuenta segura y accesible para administrar tu dinero",
-        "Realiza transferencias con BBUAM México",
-        "Consulta tu saldo en BBUAM México sin costo"
-      ]
-    }
+    
   ]
 
   navegar(url:string){
-    this.router.navigateByUrl("/inicio/cuenta/solicita/"+url)
+    this.router.navigateByUrl("/inicio/registro/"+url)
   }
 
 }

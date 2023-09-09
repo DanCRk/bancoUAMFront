@@ -5,6 +5,7 @@ import { InicioComponent } from './modules/inicio/componentes/inicio.component';
 import { PaginaNoEncontradaComponent } from './modules/pagina-no-encontrada/pagina-no-encontrada.component';
 import { RegistroComponent } from './modules/registro/registro.component';
 import { TodasCuentasComponent } from './modules/todas-cuentas/todas-cuentas.component';
+import { CuentaUsuarioComponent } from './modules/cuenta-usuario/cuenta-usuario.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,16 @@ const routes: Routes = [
     path: 'inicio/registro',
     component: RegistroComponent,
     title: 'Registro | BBUAM',
+  },
+  {
+    path: 'inicio/registro/:tipo',
+    component: RegistroComponent,
+    title: 'Registro | BBUAM',
+  },
+  {
+    path: 'cuenta/inicio',
+    component: CuentaUsuarioComponent,
+    title: 'Cuenta | BBUAM',
   },
   {
     path: '**',

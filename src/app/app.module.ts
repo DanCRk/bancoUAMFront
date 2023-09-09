@@ -7,10 +7,14 @@ import { CommonsModule } from './common/commons.module';
 import { LoginModule } from './modules/login/login.module';
 import { InicioModule } from './modules/inicio/inicio.module';
 import { AppProperties } from './core/interfaces/appProperties/app-properties';
-import { ConfigService } from './core/services/config/config.service';
+import { ConfigService } from './core/services/config/iniciocuenta.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TodasCuentasModule } from './modules/todas-cuentas/todas-cuentas.module';
-
+import { FormsModule } from '@angular/forms'; 
+import { RegistroModule } from './modules/registro/registro.module';
+import { CuentaUsuarioComponent } from './modules/cuenta-usuario/cuenta-usuario.component';
+import { CuentaUsuarioModule } from './modules/cuenta-usuario/cuenta-usuario.module';
+import { ErrorInterceptor } from './core/interceptores/error-interceptor.service';
 export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
   return () => injector.get(ConfigService).loadConfiguration();
 }
@@ -21,9 +25,12 @@ export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     CommonsModule,
+    CuentaUsuarioModule,
     HttpClientModule,
     LoginModule,
+    RegistroModule,
     TodasCuentasModule,
     InicioModule,
     AppRoutingModule
@@ -36,11 +43,11 @@ export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
       multi: true,
     
     },
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: ErrorInterceptor,
-    //   multi: true
-    // }
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]

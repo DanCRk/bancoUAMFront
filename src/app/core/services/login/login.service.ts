@@ -10,50 +10,35 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Menu } from '../../interfaces/menu/menu';
+import { Login } from '../../interfaces/login/login';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class MenuService {
+export class LoginService {
 
-  private urlMenu = this.appProperties.config?.urlMenu;
-
-  menu:Menu = {
-    menus:[]
-  }
+  private urlLogin = this.appProperties.config?.urlLogin;
 
   constructor(private appProperties: ConfigService, private http: HttpClient) {}
 
-  getMenu(
-    categoria: number
-  ): Observable<Menu> {
+  sendLogin(
+    noCuenta:string,
+    password:string
+  ) :Observable<Login> {
     let headers = new HttpHeaders();
     headers = headers.append(
       'Authorization',
       'Bearer ' + sessionStorage.getItem('token')
     );
     let params = new HttpParams();
-    params = params.append('categoria', categoria);
-    return this.http.get<Menu>(
-      this.urlMenu!,
+    params = params.append('numero_cuenta', noCuenta);
+    params = params.append('contraseña', password);
+    return this.http.get<Login>(
+      this.urlLogin!,
       {
         headers: headers,
         params: params,
       }
     );
   }
-
-  setDatosMenu(categoria: number) {
-    this.menu.menus.length = 0
-    this.getMenu(categoria).subscribe({
-      next: (e) => {
-        this.menu.menus.push(...e.menus)
-      },
-      error: (e) => {
-        
-      },
-    });
-  }
-
 }

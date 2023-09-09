@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RegistroComponent } from './registro.component';
+import { RegistroComponent } from './registro.component'; 
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -8,9 +10,6 @@ import { RegistroComponent } from './registro.component';
   declarations: [
     RegistroComponent
   ],
-  imports: [
-    CommonModule
-  ],
-  exports:[RegistroComponent]
+  imports: [CommonModule, FormsModule, BrowserModule],
 })
 export class RegistroModule { }
