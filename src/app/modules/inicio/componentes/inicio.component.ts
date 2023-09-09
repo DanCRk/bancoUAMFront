@@ -10,22 +10,7 @@ import { TokenService } from 'src/app/core/services/token/token-service.service'
 })
 export class InicioComponent implements OnInit{
 
-  constructor(private tokenService: TokenService,private actividad:ActividadService,
-    private menu:MenuService) {
-    
-  }
   ngOnInit(): void {
-    this.tokenService.getToken().subscribe({
-      next: (e) => {
-        sessionStorage.setItem('token',e.token)
-        this.actividad.guardaActividad();
-        this.actividad.validaActividad();
-      },
-      error: (e) => {
-        
-      },
-    });
 
-    this.menu.setDatosMenu(1)
   }
 }

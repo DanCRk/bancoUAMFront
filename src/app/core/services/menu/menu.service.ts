@@ -49,10 +49,9 @@ export class MenuService {
     this.getMenu(categoria).subscribe({
       next: (e) => {
         this.menu.menus.push(...e.menus)
-        console.log(this.menu)
       },
       error: (e) => {
-        console.log(e)
+        
       },
     });
   }

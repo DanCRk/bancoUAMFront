@@ -1,8 +1,8 @@
 <!--=============== HEADER ===============-->
 <header class="header">
   <nav class="nav container">
-    <div class="nav__data">
-      <a href="#" class="nav__logo"> <i class="ri-bank-fill"></i> BBUAM </a>
+    <div class="nav__data cursor_pointer" (click)="navegar('inicio')">
+      <a class="nav__logo"> <i class="ri-bank-fill" ></i> BBUAM </a>
 
       <div
         class="nav__toggle"
@@ -17,7 +17,7 @@
     <div class="nav__menu" id="nav-menu">
       <ul class="nav__list">
         <li class="dropdown__item" *ngFor="let menu of menu.menus">
-          <div class="nav__link" (click)="navegar(menu.url)">
+          <div class="nav__link">
             {{ menu.titulo }}
             <i
               [ngClass]="{
@@ -28,7 +28,7 @@
 
           <ul class="dropdown__menu">
             <li class="dropdown__subitem" *ngFor="let submenu of menu.submenus">
-              <div class="dropdown__link">
+              <div class="dropdown__link" (click)="navegar(submenu.url)">
                 {{ submenu.titulo }}
                 <i
                   [ngClass]="{
@@ -42,7 +42,7 @@
                 *ngFor="let subsubmenu of submenu.subsubmenus"
               >
                 <li>
-                  <div class="dropdown__link">
+                  <div class="dropdown__link" (click)="navegar(submenu.url)">
                     {{ subsubmenu.titulo }}
                   </div>
                 </li>

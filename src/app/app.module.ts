@@ -9,6 +9,7 @@ import { InicioModule } from './modules/inicio/inicio.module';
 import { AppProperties } from './core/interfaces/appProperties/app-properties';
 import { ConfigService } from './core/services/config/config.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { TodasCuentasModule } from './modules/todas-cuentas/todas-cuentas.module';
 
 export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
   return () => injector.get(ConfigService).loadConfiguration();
@@ -23,6 +24,7 @@ export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
     CommonsModule,
     HttpClientModule,
     LoginModule,
+    TodasCuentasModule,
     InicioModule,
     AppRoutingModule
   ],
