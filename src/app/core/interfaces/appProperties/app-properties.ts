@@ -5,4 +5,5 @@ export interface AppProperties {
     urlRegistro:string
     user:string;
     pass:string;
+    urlUsuario:string;
 }
