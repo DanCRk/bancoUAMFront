@@ -10,15 +10,15 @@
   <div class="">
       <h2 class="productgrid__title">Cuentas de débito en BBUAM</h2>
 
-    <section class="articles" *ngFor="let cuenta of cuentas" (click)="navegar(cuenta.tipo)">
-      <article >
+    <section class="articles" *ngFor="let cuenta of cuentas" >
+      <article (click)="navegar(cuenta.tipo)">
         <div class="article-wrapper">
           <figure>
             <img [src]="cuenta.imagen" alt="" />
           </figure>
           <div class="article-body">
             <h2>{{cuenta.titulo}}</h2>
-            <div class="flex__horizontal container__puntos" *ngFor="let punto of cuenta.puntos">
+            <div class="flex__horizontal container__puntos" *ngFor="let punto of cuenta.puntos" >
                 <i class="ri-arrow-right-s-fill" style="color: #ffa500;"></i>
                 <p>
                   {{punto}}
