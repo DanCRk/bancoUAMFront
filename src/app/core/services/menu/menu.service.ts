@@ -50,16 +50,125 @@ export class MenuService {
   }
 
   setDatosMenu(categoria: number) {
-    this.getMenu(categoria).subscribe({
-      next: (e) => {
-        this.actualizatBotonesDerecha.emit(categoria)
-        this.menu.menus.length = 0
-        this.menu.menus.push(...e.menus)
-      },
-      error: (e) => {
+    // this.getMenu(categoria).subscribe({
+    //   next: (e) => {
+    //     this.actualizatBotonesDerecha.emit(categoria)
+    //     this.menu.menus.length = 0
+    //     this.menu.menus.push(...e.menus)
+    //   },
+    //   error: (e) => {
         
+    //   },
+    // });
+   if(categoria==1){
+    this.menu.menus =[
+      {
+          "titulo": "CUENTA",
+          "url": "inicio/cuenta",
+          "submenus": [
+              {
+                  "titulo": "Cuentas de debito",
+                  "url": "inicio/cuenta/todas",
+                  "subsubmenus": null
+              }
+          ]
       },
-    });
+      {
+          "titulo": "PRESTAMOS",
+          "url": "inicio/prestamo",
+          "submenus": [
+              {
+                  "titulo": "Creditos y prestamos",
+                  "url": "inicio/prestamos/creditos",
+                  "subsubmenus": null
+              },
+              {
+                  "titulo": "Prestamos personales",
+                  "url": "inicio/prestamos/prestamos",
+                  "subsubmenus": null
+              }
+          ]
+      },
+      {
+          "titulo": "TARJETAS DE CREDITO",
+          "url": "inicio/tarjetascredito",
+          "submenus": [
+              {
+                  "titulo": "Todas las tarjetas",
+                  "url": "inicio/tarjetascredito/todas",
+                  "subsubmenus": null
+              },
+              {
+                  "titulo": "Solicita una tarjeta",
+                  "url": "inicio/tarjetascredito/solicita",
+                  "subsubmenus": null
+              }
+          ]
+      }
+  ]
+   }else{
+    this.menu.menus= [
+      {
+          "titulo": "INICIO",
+          "url": "cuenta/inicio",
+          "submenus": [
+              {
+                  "titulo": "Tu cuenta",
+                  "url": "cuenta/inicio",
+                  "subsubmenus": null
+              }
+          ]
+      },
+      {
+          "titulo": "TRANSFERIR",
+          "url": "cuenta/transferir",
+          "submenus": [
+              {
+                  "titulo": "A cuentas BBUAM",
+                  "url": "cuenta/transferir/acuentasbbuam",
+                  "subsubmenus": null
+              }
+          ]
+      },
+      {
+          "titulo": "PAGAR",
+          "url": "cuenta/pagar",
+          "submenus": [
+              {
+                  "titulo": "A cuentas BBUAM",
+                  "url": "cuenta/pagar/acuentasbbuam",
+                  "subsubmenus": null
+              },
+              {
+                  "titulo": "A tarjeta de credito",
+                  "url": "cuenta/pagar/tarjetacredito",
+                  "subsubmenus": null
+              }
+          ]
+      },
+      {
+          "titulo": "ADMINISTRAR",
+          "url": "cuenta/administrar",
+          "submenus": [
+              {
+                  "titulo": "Datos de contacto",
+                  "url": "cuenta/administrar/datoscontacto",
+                  "subsubmenus": null
+              },
+              {
+                  "titulo": "Datos de seguridad",
+                  "url": "cuenta/administrar/datosseguridad",
+                  "subsubmenus": [
+                      {
+                          "titulo": "Datos personales",
+                          "url": "cuenta/administrar/datosseguridad/personales"
+                      }
+                  ]
+              }
+          ]
+      }
+  ]
+   }
   }
 
 }

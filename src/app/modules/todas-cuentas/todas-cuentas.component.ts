@@ -24,7 +24,7 @@ export class TodasCuentasComponent implements OnInit{
   ]
 
   navegar(url:string){
-    this.router.navigateByUrl("/inicio/registro/"+url)
+    this.router.navigateByUrl("/inicio/registro")
   }
 
 }
