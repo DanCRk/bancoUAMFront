@@ -6,6 +6,8 @@ import { PaginaNoEncontradaComponent } from './modules/pagina-no-encontrada/pagi
 import { RegistroComponent } from './modules/registro/registro.component';
 import { TodasCuentasComponent } from './modules/todas-cuentas/todas-cuentas.component';
 import { CuentaUsuarioComponent } from './modules/cuenta-usuario/cuenta-usuario.component';
+import { AvisoPrivacidadComponent } from './common/aviso-privacidad/aviso-privacidad.component';
+import { AvisoLegalComponent } from './common/aviso-legal/aviso-legal.component';
 
 const routes: Routes = [
   {
@@ -48,6 +50,16 @@ const routes: Routes = [
     path: 'cuenta/inicio',
     component: CuentaUsuarioComponent,
     title: 'Cuenta | BBUAM',
+  },
+  {
+    path: 'inicio/aviso-de-privacidad',
+    component: AvisoPrivacidadComponent,
+    title: 'Privacidad | BBUAM',
+  },
+  {
+    path: 'inicio/aviso-legal',
+    component: AvisoLegalComponent,
+    title: 'Privacidad | BBUAM',
   },
   {
     path: '**',

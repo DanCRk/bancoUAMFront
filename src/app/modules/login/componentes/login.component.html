@@ -1,21 +1,36 @@
 <div class="login-box">
-    <h2>Iniciar Sesion</h2>
-    <form>
-      <div class="user-box">
-        <input type="text-number" name="" required="" [(ngModel)]="numeroCuenta" [ngModelOptions]="{standalone: true}">
-        <label>Numero de cuenta</label>
-      </div>
-      
-      <div class="user-box">
-        <input type="password" name="" required="" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
-        <label>Contraseña</label>
-      </div>
-      <a class="cursor_pointer hover__" (click)="submitLogin()">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Iniciar
-      </a>
-    </form>
-  </div>
+  <h2>Iniciar Sesion</h2>
+  <form>
+    <div class="user-box">
+      <input
+        type="text-number"
+        name=""
+        required=""
+        [(ngModel)]="numeroCuenta"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <label>Numero de cuenta</label>
+    </div>
+
+    <div class="user-box">
+      <input
+        type="password"
+        name=""
+        required=""
+        [(ngModel)]="password"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <label>Contraseña</label>
+    </div>
+    <a class="cursor_pointer hover__" (click)="submitLogin()">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Iniciar
+    </a>
+  </form>
+</div>
+<div style="height: 850px;">
+
+</div>

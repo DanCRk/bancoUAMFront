@@ -75,11 +75,15 @@ a {
 .flex__horizontal{
   display: flex;
   flex-direction: row;
+  gap: 50px;
 }
 
 .flex__spacearround{
   justify-content: space-around;
   gap: 50px;
+}
+.flex__gap{
+  gap: 100px;
 }
 
 .texto__blanco{
