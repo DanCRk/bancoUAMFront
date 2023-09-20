@@ -27,19 +27,19 @@ export class RegistroComponent {
 
     let pasa = true
 
-    if(!this.nombre.match(this.util.textoPlanoExp)){
+    if(this.nombre.length <5){
       pasa=false
       this.util.enviarAlerta('warning',this.util.colorWarning,"Error en el formulario", "Formato en el campo nombre invalido")
-    }else if(!this.apellido.match(this.util.textoPlanoExp)){
+    }else if(this.apellido.length <5){
       pasa=false
       this.util.enviarAlerta('warning',this.util.colorWarning,"Error en el formulario", "Formato en el campo apellido invalido")
-    }else if(!this.direccion.match(this.util.textoPlanoExp)){
+    }else if(this.direccion.length <20){
       pasa=false
       this.util.enviarAlerta('warning',this.util.colorWarning,"Error en el formulario", "Formato en el campo direccion invalido")
     }else if(!this.email.match(this.util.emailExp)){
       pasa=false
       this.util.enviarAlerta('warning',this.util.colorWarning,"Error en el formulario", "Formato en el campo correo invalido")
-    }else if(!this.fechaNacimiento.match(this.util.fechaformatoExp)){
+    }else if(this.fechaNacimiento == ''){
       pasa=false
       this.util.enviarAlerta('warning',this.util.colorWarning,"Error en el formulario", "Formato en el campo fecha invalido")
     }else if(!this.password.match(this.util.passwordRegex)){
@@ -51,6 +51,7 @@ export class RegistroComponent {
   }
 
   submitRegister() {
+    console.log(this.fechaNacimiento)
     if(this.checkInputs()){
       this.registro
       .sendRegistro(

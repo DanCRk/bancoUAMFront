@@ -17,5 +17,6 @@ export class InicioComponent implements OnInit{
 
   ngOnInit(): void {
     this.menuService.setDatosMenu(1)
+    sessionStorage.clear()
   }
 }

@@ -60,7 +60,9 @@ export class MenuService {
         
     //   },
     // });
+    this.actualizatBotonesDerecha.emit(categoria)
    if(categoria==1){
+    
     this.menu.menus =[
       {
           "titulo": "CUENTA",
@@ -151,19 +153,9 @@ export class MenuService {
           "url": "cuenta/administrar",
           "submenus": [
               {
-                  "titulo": "Datos de contacto",
-                  "url": "cuenta/administrar/datoscontacto",
+                  "titulo": "Datos personales",
+                  "url": "cuenta/administrar/personales",
                   "subsubmenus": null
-              },
-              {
-                  "titulo": "Datos de seguridad",
-                  "url": "cuenta/administrar/datosseguridad",
-                  "subsubmenus": [
-                      {
-                          "titulo": "Datos personales",
-                          "url": "cuenta/administrar/datosseguridad/personales"
-                      }
-                  ]
               }
           ]
       }

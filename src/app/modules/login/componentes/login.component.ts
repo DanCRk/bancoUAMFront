@@ -20,7 +20,7 @@ export class LoginComponent {
 
     let pasa = true
 
-    if(this.numeroCuenta.length != 20){
+    if(this.numeroCuenta.length < 18){
       pasa=false
       this.util.enviarAlerta('warning',this.util.colorWarning,"Error en el formulario", "Formato en el campo numero de cuenta invalido")
     }else if(!this.password.match(this.util.passwordRegex)){
