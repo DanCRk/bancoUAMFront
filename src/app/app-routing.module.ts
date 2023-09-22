@@ -11,6 +11,7 @@ import { AvisoLegalComponent } from './common/aviso-legal/aviso-legal.component'
 import { SolicitarTarjetaComponent } from './modules/solicitar-tarjeta/solicitar-tarjeta.component';
 import { TarjetaasociadaComponent } from './modules/tarjetaasociada/tarjetaasociada.component';
 import { TodastarjetascreditoComponent } from './modules/todastarjetascredito/todastarjetascredito.component';
+import { PrestamosycreditosComponent } from './modules/prestamosycreditos/prestamosycreditos.component';
 
 const routes: Routes = [
   {
@@ -81,6 +82,12 @@ const routes: Routes = [
     path: 'inicio/tarjetascredito/todas',
     component: TodastarjetascreditoComponent,
     title: 'todas las tarjetas de credito | BBUAM',
+  },
+
+  {
+    path: 'inicio/prestamos/creditos',
+    component: PrestamosycreditosComponent,
+    title: 'prestamos y creditos | BBUAM',
   },
 
   

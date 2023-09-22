@@ -18,6 +18,7 @@ import { ErrorInterceptor } from './core/interceptores/error-interceptor.service
 import { SolicitarTarjetaComponent } from './modules/solicitar-tarjeta/solicitar-tarjeta.component';
 import { TarjetaasociadaComponent } from './modules/tarjetaasociada/tarjetaasociada.component';
 import { TodastarjetascreditoComponent } from './modules/todastarjetascredito/todastarjetascredito.component';
+import { PrestamosycreditosComponent } from './modules/prestamosycreditos/prestamosycreditos.component';
 export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
   return () => injector.get(ConfigService).loadConfiguration();
 }
@@ -28,6 +29,7 @@ export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
     SolicitarTarjetaComponent,
     TarjetaasociadaComponent,
     TodastarjetascreditoComponent,
+    PrestamosycreditosComponent,
   ],
   imports: [
     BrowserModule,
