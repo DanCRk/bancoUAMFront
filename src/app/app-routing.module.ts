@@ -8,6 +8,9 @@ import { TodasCuentasComponent } from './modules/todas-cuentas/todas-cuentas.com
 import { CuentaUsuarioComponent } from './modules/cuenta-usuario/cuenta-usuario.component';
 import { AvisoPrivacidadComponent } from './common/aviso-privacidad/aviso-privacidad.component';
 import { AvisoLegalComponent } from './common/aviso-legal/aviso-legal.component';
+import { SolicitarTarjetaComponent } from './modules/solicitar-tarjeta/solicitar-tarjeta.component';
+import { TarjetaasociadaComponent } from './modules/tarjetaasociada/tarjetaasociada.component';
+import { TodastarjetascreditoComponent } from './modules/todastarjetascredito/todastarjetascredito.component';
 
 const routes: Routes = [
   {
@@ -61,11 +64,34 @@ const routes: Routes = [
     component: AvisoLegalComponent,
     title: 'Privacidad | BBUAM',
   },
+
+  {
+    path: '',
+    component: SolicitarTarjetaComponent,
+    title: 'solicitar tarjeta | BBUAM',
+  },
+
+  {
+    path: '',
+    component: TarjetaasociadaComponent,
+    title: 'tarjetacreditoasociada | BBUAM',
+  },
+
+  {
+    path: 'inicio/tarjetascredito/todas',
+    component: TodastarjetascreditoComponent,
+    title: 'todas las tarjetas de credito | BBUAM',
+  },
+
+  
+
   {
     path: '**',
     component: PaginaNoEncontradaComponent,
     title: 'Pagina no encontrada | BBUAM',
   },
+
+  
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
