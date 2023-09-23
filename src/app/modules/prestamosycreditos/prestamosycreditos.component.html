@@ -19,7 +19,7 @@
   </div>
   
   <section class="articles" *ngFor="let cuenta of cuentas" >
-    <article >
+    <article (click)="navegar(cuenta.tipo)">
       <div class="article-wrapper">
         <figure>
           <!--<img [src]="cuenta.imagen" alt="" />-->
