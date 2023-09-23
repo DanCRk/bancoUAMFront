@@ -14,8 +14,6 @@ export class TodasCuentasComponent implements OnInit{
     
   }
   ngOnInit(): void {
-    let i = this.route.snapshot.params['tipo']
-    console.log(i)
     this.cuentas = this.cuentaService.cuentas
   }
 

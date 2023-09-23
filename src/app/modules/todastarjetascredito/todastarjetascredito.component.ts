@@ -15,12 +15,10 @@ export class TodastarjetascreditoComponent {
     
   }
   ngOnInit(): void {
-    let i = this.route.snapshot.params['tipo']
-    console.log(i)
-    this.cuentas = this.cuentaService.cuentas
+    this.tarjetas = this.cuentaService.tarjetasCredito
   }
 
-  cuentas:Array<Cuenta> = [
+  tarjetas:Array<Cuenta> = [
     
   ]
 

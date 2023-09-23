@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ActividadService } from 'src/app/core/interceptores/actividad.service';
 import { LoginService } from 'src/app/core/services/login/login.service';
 import { RegistroService } from 'src/app/core/services/registro/registro.service';
 import { UtilService } from 'src/app/core/services/util/util.service';
@@ -14,7 +15,7 @@ export class LoginComponent {
    password = ''
    numeroCuenta= ''
 
-   constructor(private login: LoginService, private util : UtilService,private router:Router) {}
+   constructor(private login: LoginService, private util : UtilService,private router:Router,private actividad:ActividadService) {}
 
    checkInputs():boolean{
 
@@ -41,6 +42,7 @@ export class LoginComponent {
       .subscribe({
         next: (e) => {
           if(e.acceso){
+            this.actividad.guardaActividad()
             sessionStorage.setItem('idUser',e.id_usuario.toString())
             this.router.navigateByUrl("cuenta/inicio")
           }

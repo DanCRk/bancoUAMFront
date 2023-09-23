@@ -15,8 +15,6 @@ import { RegistroModule } from './modules/registro/registro.module';
 import { CuentaUsuarioComponent } from './modules/cuenta-usuario/cuenta-usuario.component';
 import { CuentaUsuarioModule } from './modules/cuenta-usuario/cuenta-usuario.module';
 import { ErrorInterceptor } from './core/interceptores/error-interceptor.service';
-import { SolicitarTarjetaComponent } from './modules/solicitar-tarjeta/solicitar-tarjeta.component';
-import { TarjetaasociadaComponent } from './modules/tarjetaasociada/tarjetaasociada.component';
 import { TodastarjetascreditoComponent } from './modules/todastarjetascredito/todastarjetascredito.component';
 import { PrestamosycreditosComponent } from './modules/prestamosycreditos/prestamosycreditos.component';
 export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
@@ -26,8 +24,6 @@ export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
 @NgModule({
   declarations: [
     AppComponent,
-    SolicitarTarjetaComponent,
-    TarjetaasociadaComponent,
     TodastarjetascreditoComponent,
     PrestamosycreditosComponent,
   ],

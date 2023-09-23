@@ -99,11 +99,6 @@ export class MenuService {
                   "titulo": "Todas las tarjetas",
                   "url": "inicio/tarjetascredito/todas",
                   "subsubmenus": null
-              },
-              {
-                  "titulo": "Solicita una tarjeta",
-                  "url": "inicio/tarjetascredito/solicita",
-                  "subsubmenus": null
               }
           ]
       }
