@@ -45,6 +45,7 @@ export class CuentaUsuarioComponent implements OnInit {
         this.usuario.numeroCuenta = resultado.join(" ");
         this.usuario.saldo = e.saldo
         this.menuService.actualizatUsuario.emit(this.usuario.nombre +" "+ this.usuario.apellido);
+        this.usuarioService.usuario = e
       },
       error: (e) => {},
     });

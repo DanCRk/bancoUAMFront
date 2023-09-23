@@ -4,19 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonsModule } from './common/commons.module';
-import { LoginModule } from './modules/login/login.module';
+import { LoginModule } from './modules/inicio/secciones/login/login.module';
 import { InicioModule } from './modules/inicio/inicio.module';
 import { AppProperties } from './core/interfaces/appProperties/app-properties';
 import { ConfigService } from './core/services/config/iniciocuenta.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { TodasCuentasModule } from './modules/todas-cuentas/todas-cuentas.module';
+import { TodasCuentasModule } from './modules/inicio/secciones/todas-cuentas/todas-cuentas.module';
 import { FormsModule } from '@angular/forms'; 
-import { RegistroModule } from './modules/registro/registro.module';
+import { RegistroModule } from './modules/inicio/secciones/registro/registro.module';
 import { CuentaUsuarioComponent } from './modules/cuenta-usuario/cuenta-usuario.component';
 import { CuentaUsuarioModule } from './modules/cuenta-usuario/cuenta-usuario.module';
 import { ErrorInterceptor } from './core/interceptores/error-interceptor.service';
-import { TodastarjetascreditoComponent } from './modules/todastarjetascredito/todastarjetascredito.component';
-import { PrestamosycreditosComponent } from './modules/prestamosycreditos/prestamosycreditos.component';
+import { TodastarjetascreditoComponent } from './modules/inicio/secciones/todastarjetascredito/todastarjetascredito.component';
+import { PrestamosycreditosComponent } from './modules/inicio/secciones/prestamosycreditos/prestamosycreditos.component';
 export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
   return () => injector.get(ConfigService).loadConfiguration();
 }

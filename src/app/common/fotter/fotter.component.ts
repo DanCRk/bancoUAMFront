@@ -7,8 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./fotter.component.css']
 })
 export class FotterComponent implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  ngOnInit() {
   }
 
   constructor(private router: Router){

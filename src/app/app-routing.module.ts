@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './modules/login/componentes/login.component';
 import { InicioComponent } from './modules/inicio/componentes/inicio.component';
 import { PaginaNoEncontradaComponent } from './modules/pagina-no-encontrada/pagina-no-encontrada.component';
-import { RegistroComponent } from './modules/registro/registro.component';
-import { TodasCuentasComponent } from './modules/todas-cuentas/todas-cuentas.component';
+import { RegistroComponent } from './modules/inicio/secciones/registro/registro.component';
+import { TodasCuentasComponent } from './modules/inicio/secciones/todas-cuentas/todas-cuentas.component';
 import { CuentaUsuarioComponent } from './modules/cuenta-usuario/cuenta-usuario.component';
 import { AvisoPrivacidadComponent } from './common/aviso-privacidad/aviso-privacidad.component';
 import { AvisoLegalComponent } from './common/aviso-legal/aviso-legal.component';
-import { TodastarjetascreditoComponent } from './modules/todastarjetascredito/todastarjetascredito.component';
-import { PrestamosycreditosComponent } from './modules/prestamosycreditos/prestamosycreditos.component';
+import { TodastarjetascreditoComponent } from './modules/inicio/secciones/todastarjetascredito/todastarjetascredito.component';
+import { PrestamosycreditosComponent } from './modules/inicio/secciones/prestamosycreditos/prestamosycreditos.component';
+import { LoginComponent } from './modules/inicio/secciones/login/login.component';
 
 const routes: Routes = [
   {
