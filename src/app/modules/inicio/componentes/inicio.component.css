@@ -1,0 +1,68 @@
+
+ body {
+    padding-top: 75px;
+     margin: 0; /*quita los bordes que no estan a la vista del usuario*/
+     background-color: #9cd1e9;
+ }
+ .Seguro {
+     font-size: 10px;
+     font-family: "Segoe UI";
+     width: 500px;
+     margin: 0 auto;
+     text-align: justify;
+ }
+ section article {
+     background-color: #D6EAF8 ;
+     margin: 0.5rem;
+     border-radius: 2rem;
+     cursor: pointer;
+     transition: box-shadow 0.9s ease;
+ }
+ section article:hover {
+    box-shadow: 0.5rem 0.5rem 0.5rem #4169E1; /* difuminacion derecha, abajo, izquierda, color*/
+
+}
+ .infoseg{
+     font-size: 13px;
+     padding: 1rem;
+ }
+ .discriminacion {
+     font-size: 13px;
+     
+     padding: 1rem;
+ }
+ .cumple {
+    font-size: 13px;
+    
+    padding: 1rem;
+}
+ .cripto {
+    font-size: 13px;
+    
+    padding: 1rem;
+}
+.concierto {
+    font-size: 13px;
+    
+    padding: 1rem;
+}
+
+.casa {
+    font-size: 13px;
+    
+    padding: 1rem;
+}
+ img {
+     margin: 0 auto;
+     display: flex;
+ }
+
+ .Comerciales{
+    text-align: center;
+ }
+ .Comerciales img{
+    display: inline-block;
+
+ }
+
+ 
