@@ -10,6 +10,7 @@ import { AvisoLegalComponent } from './common/aviso-legal/aviso-legal.component'
 import { TodastarjetascreditoComponent } from './modules/inicio/secciones/todastarjetascredito/todastarjetascredito.component';
 import { PrestamosycreditosComponent } from './modules/inicio/secciones/prestamosycreditos/prestamosycreditos.component';
 import { LoginComponent } from './modules/inicio/secciones/login/login.component';
+import { PrestamosactivosComponent } from './modules/prestamosactivos/prestamosactivos.component';
 
 const routes: Routes = [
   {
@@ -73,11 +74,20 @@ const routes: Routes = [
     component: PrestamosycreditosComponent,
     title: 'prestamos y creditos | BBUAM',
   },
+
+
+  {
+    path: 'inicio/prestamos/prestamos',
+    component: PrestamosactivosComponent,
+    title: 'prestamos activos | BBUAM',
+  },
   {
     path: '**',
     component: PaginaNoEncontradaComponent,
     title: 'Pagina no encontrada | BBUAM',
   },
+
+  
 
   
 ];

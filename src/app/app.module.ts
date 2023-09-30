@@ -17,6 +17,7 @@ import { CuentaUsuarioModule } from './modules/cuenta-usuario/cuenta-usuario.mod
 import { ErrorInterceptor } from './core/interceptores/error-interceptor.service';
 import { TodastarjetascreditoComponent } from './modules/inicio/secciones/todastarjetascredito/todastarjetascredito.component';
 import { PrestamosycreditosComponent } from './modules/inicio/secciones/prestamosycreditos/prestamosycreditos.component';
+import { PrestamosactivosComponent } from './modules/prestamosactivos/prestamosactivos.component';
 export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
   return () => injector.get(ConfigService).loadConfiguration();
 }
@@ -26,6 +27,7 @@ export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
     AppComponent,
     TodastarjetascreditoComponent,
     PrestamosycreditosComponent,
+    PrestamosactivosComponent,
   ],
   imports: [
     BrowserModule,
