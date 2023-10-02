@@ -26,7 +26,6 @@ export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
     AppComponent,
     TodastarjetascreditoComponent,
     PrestamosycreditosComponent,
-    PrestamosactivosComponent,
   ],
   imports: [
     BrowserModule,

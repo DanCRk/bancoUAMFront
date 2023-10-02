@@ -73,13 +73,6 @@ const routes: Routes = [
     component: PrestamosycreditosComponent,
     title: 'prestamos y creditos | BBUAM',
   },
-
-
-  {
-    path: 'inicio/prestamos/prestamos',
-    component: PrestamosactivosComponent,
-    title: 'prestamos activos | BBUAM',
-  },
   {
     path: '**',
     component: PaginaNoEncontradaComponent,
