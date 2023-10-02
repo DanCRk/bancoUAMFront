@@ -7,5 +7,10 @@ export interface Usuario{
     fecha_nacimiento: string
     fecha_ultimo_acceso: string
     numeroCuenta:string,
-    saldo:string
+    saldo:string,
+    numeroTarjetaCredito:string,
+    fechaVencimientoCredito:string,
+    limiteCredito:string,
+    saldoActual:string,
+    fechaCorte:string
   }

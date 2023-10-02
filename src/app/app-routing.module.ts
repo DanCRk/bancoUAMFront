@@ -4,12 +4,13 @@ import { InicioComponent } from './modules/inicio/componentes/inicio.component';
 import { PaginaNoEncontradaComponent } from './modules/pagina-no-encontrada/pagina-no-encontrada.component';
 import { RegistroComponent } from './modules/inicio/secciones/registro/registro.component';
 import { TodasCuentasComponent } from './modules/inicio/secciones/todas-cuentas/todas-cuentas.component';
-import { CuentaUsuarioComponent } from './modules/cuenta-usuario/cuenta-usuario.component';
+
 import { AvisoPrivacidadComponent } from './common/aviso-privacidad/aviso-privacidad.component';
 import { AvisoLegalComponent } from './common/aviso-legal/aviso-legal.component';
 import { TodastarjetascreditoComponent } from './modules/inicio/secciones/todastarjetascredito/todastarjetascredito.component';
 import { PrestamosycreditosComponent } from './modules/inicio/secciones/prestamosycreditos/prestamosycreditos.component';
 import { LoginComponent } from './modules/inicio/secciones/login/login.component';
+import { CuentaUsuarioComponent } from './modules/cuenta-usuario/componentes/cuenta-usuario.component';
 
 const routes: Routes = [
   {
@@ -23,17 +24,6 @@ const routes: Routes = [
     title: '  Cuentas | BBUAM',
   },
   {
-    path: 'inicio/cuenta/solicita',
-    component: TodasCuentasComponent,
-    title: '  Cuentas | BBUAM',
-  },
-  {
-    path: 'inicio/cuenta/solicita/:tipo',
-    component: TodasCuentasComponent,
-    title: '  Cuentas | BBUAM',
-  },
-
-  {
     path: 'inicio',
     component: InicioComponent,
     title: 'Banco UAM',
@@ -44,7 +34,17 @@ const routes: Routes = [
     title: 'Login | BBUAM',
   },
   {
+    path: 'inicio/login/:tipo',
+    component: LoginComponent,
+    title: 'Login | BBUAM',
+  },
+  {
     path: 'inicio/registro',
+    component: RegistroComponent,
+    title: 'Registro | BBUAM',
+  },{
+
+    path: 'inicio/registro/:tipo',
     component: RegistroComponent,
     title: 'Registro | BBUAM',
   },

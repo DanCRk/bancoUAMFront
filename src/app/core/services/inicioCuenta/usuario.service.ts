@@ -28,7 +28,12 @@ export class UsuarioService {
     idUsuario: 0,
     nombre: '',
     numeroCuenta:'',
-    saldo:''
+    saldo:'',
+    numeroTarjetaCredito:'',
+    fechaCorte:'',
+    fechaVencimientoCredito:'',
+    limiteCredito:'',
+    saldoActual:'',
   };
 
   getUsuario(idUsuario: string): Observable<Usuario> {

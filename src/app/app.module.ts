@@ -12,11 +12,11 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TodasCuentasModule } from './modules/inicio/secciones/todas-cuentas/todas-cuentas.module';
 import { FormsModule } from '@angular/forms'; 
 import { RegistroModule } from './modules/inicio/secciones/registro/registro.module';
-import { CuentaUsuarioComponent } from './modules/cuenta-usuario/cuenta-usuario.component';
-import { CuentaUsuarioModule } from './modules/cuenta-usuario/cuenta-usuario.module';
+
 import { ErrorInterceptor } from './core/interceptores/error-interceptor.service';
 import { TodastarjetascreditoComponent } from './modules/inicio/secciones/todastarjetascredito/todastarjetascredito.component';
 import { PrestamosycreditosComponent } from './modules/inicio/secciones/prestamosycreditos/prestamosycreditos.component';
+import { CuentaUsuarioModule } from './modules/cuenta-usuario/componentes/cuenta-usuario.module';
 export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
   return () => injector.get(ConfigService).loadConfiguration();
 }

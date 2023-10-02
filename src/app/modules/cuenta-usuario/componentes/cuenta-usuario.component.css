@@ -59,10 +59,7 @@
 
 .ultimaConexion{
   margin-top: 140px;
-}
-
-.productgrid__title {
-  font-size: 18px;
+  font-size: 12px;
   line-height: 26px;
   font-weight: 200;
   color: var(--productgrid-text-color, #4b4b4b);
@@ -71,15 +68,40 @@
   text-align: center;
 }
 
+.productgrid__title {
+  font-size: 12px;
+  margin-top: 20px;
+  line-height: 26px;
+  font-weight: 200;
+  color: var(--productgrid-text-color, #4b4b4b);
+  margin-bottom: 8px;
+  margin-left: 30px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
 
 
 @media (min-width: 600px) {
 
-  .productgrid__title {
+  .ultimaConexion {
     text-align: left;
-    font-size: 22px;
+    font-size: 15px;
+    font-weight: bold;
     line-height: 23px;
   }
+
+  .ultimaConexion span{
+    font-weight: 400;
+  }
+
+  .productgrid__title {
+    text-align: left;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 23px;
+  }
+
 }
 
 .gridCuentas{

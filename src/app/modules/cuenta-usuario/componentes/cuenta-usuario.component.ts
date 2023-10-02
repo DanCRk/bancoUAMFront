@@ -33,6 +33,7 @@ export class CuentaUsuarioComponent implements OnInit {
     }
     this.usuarioService.getUsuario(sessionStorage.getItem('idUser')).subscribe({
       next: (e) => {
+        this.usuario = e
         this.usuario.apellido = e.apellido;
         this.usuario.direccion = e.direccion;
         this.usuario.email = e.email;
@@ -46,6 +47,7 @@ export class CuentaUsuarioComponent implements OnInit {
         this.usuario.saldo = e.saldo
         this.menuService.actualizatUsuario.emit(this.usuario.nombre +" "+ this.usuario.apellido);
         this.usuarioService.usuario = e
+        console.log(e)
       },
       error: (e) => {},
     });

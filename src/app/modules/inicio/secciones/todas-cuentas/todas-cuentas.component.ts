@@ -22,7 +22,7 @@ export class TodasCuentasComponent implements OnInit{
   ]
 
   navegar(url:string){
-    this.router.navigateByUrl("/inicio/registro")
+    this.router.navigateByUrl("/inicio/login/"+url)
   }
 
 }
