@@ -6,4 +6,6 @@ export interface AppProperties {
     user:string;
     pass:string;
     urlUsuario:string;
+    urlEditarUsuario:string;
+    urlBorrarUsuario:string;
 }

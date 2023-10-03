@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/core/interfaces/usuario/usuario';
+import { CuentaUsuario } from 'src/app/core/interfaces/usuario/usuario';
 import { UsuarioService } from 'src/app/core/services/inicioCuenta/usuario.service';
 import { MenuService } from 'src/app/core/services/menu/menu.service';
 import { UtilService } from 'src/app/core/services/util/util.service';
@@ -11,7 +11,7 @@ import { UtilService } from 'src/app/core/services/util/util.service';
   styleUrls: ['./cuenta-usuario.component.css'],
 })
 export class CuentaUsuarioComponent implements OnInit {
-  usuario: Usuario;
+  usuario: CuentaUsuario;
 
   constructor(
     private util: UtilService,
@@ -34,20 +34,15 @@ export class CuentaUsuarioComponent implements OnInit {
     this.usuarioService.getUsuario(sessionStorage.getItem('idUser')).subscribe({
       next: (e) => {
         this.usuario = e
-        this.usuario.apellido = e.apellido;
-        this.usuario.direccion = e.direccion;
-        this.usuario.email = e.email;
-        this.usuario.fecha_nacimiento = e.fecha_nacimiento;
-        this.usuario.fecha_ultimo_acceso = e.fecha_ultimo_acceso;
-        this.usuario.idUsuario = e.idUsuario;
-        this.usuario.nombre = e.nombre;
-        let cadena = e.numeroCuenta;
+        let cadena = e.cuenta.numeroCuenta;
         let resultado = cadena.match(/.{1,4}/g); 
-        this.usuario.numeroCuenta = resultado.join(" ");
-        this.usuario.saldo = e.saldo
-        this.menuService.actualizatUsuario.emit(this.usuario.nombre +" "+ this.usuario.apellido);
-        this.usuarioService.usuario = e
-        console.log(e)
+        this.usuario.cuenta.numeroCuenta = resultado.join(" ");
+        cadena = e.tarjetaCredito.numero_tarjeta
+        this.usuario.tarjetaCredito.numero_tarjeta = cadena.match(/.{1,4}/g).join(" ");
+        this.menuService.actualizatUsuario.emit(this.usuario.usuairo.nombre +" "+ this.usuario.usuairo.apellido);
+
+        this.usuarioService.usuarioss.push(e)
+
       },
       error: (e) => {},
     });

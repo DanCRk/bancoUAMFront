@@ -1,28 +1,29 @@
 <h3 class="ultimaConexion">
-  Ultima conexion: <span> {{ usuario.fecha_ultimo_acceso }}</span>
+  Ultima conexion: <span> {{ usuario.usuairo.fecha_ultimo_acceso }}</span>
 </h3>
 
 <h2 class="productgrid__title">
-  Buenos dias, {{ usuario.nombre.split(' ')[0] }}
+  Buenos dias, {{ usuario.usuairo.nombre.split(' ')[0] }}
 </h2>
 <div class="gridCuentas">
   <div class="bank-account-card article-card flex__vertical">
     <h3>Cuenta de Debito</h3>
-    <p>{{ usuario.numeroCuenta }}</p>
+    <p>{{ usuario.cuenta.numeroCuenta }}</p>
     <p>Disponible: </p>
-    <p>{{ usuario.saldo | currency:'MXN':'symbol' }}</p>
+    <p>{{ usuario.cuenta.saldo | currency:'MXN':'symbol' }}</p>
   </div>
   <div class="bank-account-card article-card flex__vertical">
     <h3>Tarjeta de Credito</h3>
-    <p>{{ usuario.numeroCuenta }}</p>
+    <p>{{ usuario.tarjetaCredito.numero_tarjeta }}</p>
     <p>Disponible: </p>
-    <p>{{ usuario.saldo | currency:'MXN':'symbol' }}</p>
+    <p>{{ usuario.tarjetaCredito.saldo_actual | currency:'MXN':'symbol' }}</p>
   </div>
   <div class="bank-account-card article-card flex__vertical">
     <h3>Prestamo</h3>
-    <p>{{ usuario.numeroCuenta }}</p>
-    <p>Disponible: </p>
-    <p>{{ usuario.saldo | currency:'MXN':'symbol' }}</p>
+    <p>Total: </p>
+    <p>{{ usuario.prestamos[0].monto| currency:'MXN':'symbol'  }}</p>
+    <p>Pagado: </p>
+    <p>{{ usuario.prestamos[0].pagos_realizados * usuario.prestamos[0].pago_mensual| currency:'MXN':'symbol' }}</p>
   </div>
 </div>
 

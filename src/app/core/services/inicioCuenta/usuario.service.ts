@@ -10,33 +10,22 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Usuario } from '../../interfaces/usuario/usuario';
+import { CuentaUsuario } from '../../interfaces/usuario/usuario';
 @Injectable({
   providedIn: 'root',
 })
 export class UsuarioService {
   private urlUsuario = this.appProperties.config?.urlUsuario;
+  private urlBorrarUsuario = this.appProperties.config?.urlBorrarUsuario;
+  private urlEditarUsuario = this.appProperties.config?.urlEditarUsuario;
 
-  constructor(private appProperties: ConfigService, private http: HttpClient) {}
+  constructor(private appProperties: ConfigService, private http: HttpClient) {this.usuarioss = []}
 
-  usuario: Usuario = {
-    apellido: '',
-    direccion: '',
-    email: '',
-    fecha_nacimiento: '',
-    fecha_ultimo_acceso: '',
-    idUsuario: 0,
-    nombre: '',
-    numeroCuenta:'',
-    saldo:'',
-    numeroTarjetaCredito:'',
-    fechaCorte:'',
-    fechaVencimientoCredito:'',
-    limiteCredito:'',
-    saldoActual:'',
-  };
+  usuario: CuentaUsuario 
 
-  getUsuario(idUsuario: string): Observable<Usuario> {
+  usuarioss:Array<CuentaUsuario>
+
+  getUsuario(idUsuario: string): Observable<CuentaUsuario> {
     let headers = new HttpHeaders();
     headers = headers.append(
       'Authorization',
@@ -44,7 +33,7 @@ export class UsuarioService {
     );
     let params = new HttpParams();
     params = params.append('id_usuario', idUsuario);
-    return this.http.get<Usuario>(this.urlUsuario!, {
+    return this.http.get<CuentaUsuario>(this.urlUsuario!, {
       headers: headers,
       params: params,
     });

@@ -8,7 +8,7 @@ import { Idle } from 'idlejs';
 })
 export class ActividadService {
 
-  constructor(private route:Router) {}
+  constructor(private router: Router) {}
 
   urlsis = "inicio"
 
@@ -27,6 +27,7 @@ export class ActividadService {
     const LIMIT = 60000 * 2; //6 minutos
 
     setInterval(() => {
+      console.log("entra a comprobnar##############")
       const f = sessionStorage.getItem('lastActivity');
       let fech = new Date(+f!);
       // console.log('fecha 2: ', fech);
@@ -36,7 +37,7 @@ export class ActividadService {
         sessionStorage.removeItem('lastActivity');
         sessionStorage.clear();
         console.log('Cerrar sesion');
-        const nuevaVentana = window.open(this.urlsis, '_self');
+        this.router.navigateByUrl(this.urlsis)
       }
     }, 60000); //comprobar cada minuto
   }
