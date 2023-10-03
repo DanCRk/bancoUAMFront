@@ -1,9 +1,4 @@
 
- body {
-    padding-top: 75px;
-     margin: 0; /*quita los bordes que no estan a la vista del usuario*/
-     background-color: #9cd1e9;
- }
  .Seguro {
      font-size: 10px;
      font-family: "Segoe UI";
