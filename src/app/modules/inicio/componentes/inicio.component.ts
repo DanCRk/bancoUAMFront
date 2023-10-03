@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActividadService } from 'src/app/core/interceptores/actividad.service';
 import { MenuService } from 'src/app/core/services/menu/menu.service';
-import { TokenService } from 'src/app/core/services/token/token-service.service';
 
 @Component({
   selector: 'app-inicio',

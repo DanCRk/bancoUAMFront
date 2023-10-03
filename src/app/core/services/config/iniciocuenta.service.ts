@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ConfigService {
   private appProperties: AppProperties | undefined;
-  private readonly configPath: string = '/assets/appProperties.json';
+  private readonly configPath: string = 'assets/appProperties.json';
 
   constructor(private http: HttpClient) {}
 

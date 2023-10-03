@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host bancouam.tplinkdns.com --disable-host-check",
-    "build": "ng build --output-path docs --base-href=./",
+    "build": "ng build --output-path docs --base-href /bancoUAMFront/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

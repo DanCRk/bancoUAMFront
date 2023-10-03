@@ -11,7 +11,7 @@ import { UtilService } from 'src/app/core/services/util/util.service';
   styleUrls: ['./cuenta-usuario.component.css'],
 })
 export class CuentaUsuarioComponent implements OnInit {
-  usuario: CuentaUsuario;
+  usuario: CuentaUsuario = null;
 
   constructor(
     private util: UtilService,
