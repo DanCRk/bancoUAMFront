@@ -1,5 +1,4 @@
-/*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap");
+
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -26,6 +25,10 @@
   --z-tooltip: 10;
   --z-fixed: 100;
 }
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 
 /*========== Responsive typography ==========*/
 @media screen and (min-width: 1024px) {
