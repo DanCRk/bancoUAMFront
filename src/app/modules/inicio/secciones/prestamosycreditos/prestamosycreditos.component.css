@@ -7,7 +7,7 @@
     position: relative;
     overflow: hidden;
     min-height: 264px;
-    background-image: url(https://clientebancario.bde.es/f/webcb/RCL/ActualidadEducacionFinanciera/Blog/novedades/Garantia-de-prestamo-850x443.jpg);
+    background-image: url('../../../../../assets/img/prestamosYCreditos.jpg');
     
     height: 0;
   }
