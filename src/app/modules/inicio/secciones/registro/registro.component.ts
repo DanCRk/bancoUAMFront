@@ -15,6 +15,7 @@ export class RegistroComponent {
   
 
   password = '';
+  password2 = '';
   nombre = '';
   apellido = '';
   email = '';
@@ -45,6 +46,9 @@ export class RegistroComponent {
     }else if(!this.password.match(this.util.passwordRegex)){
       pasa=false
       this.util.enviarAlerta('warning',this.util.colorWarning,"Error en el formulario", "Formato en el campo contraseña invalido")
+    }else if(this.password!=this.password2){
+      pasa=false
+      this.util.enviarAlerta('warning',this.util.colorWarning,"Error en el formulario", "Las contraseñas no coinciden")
     }
 
     return pasa

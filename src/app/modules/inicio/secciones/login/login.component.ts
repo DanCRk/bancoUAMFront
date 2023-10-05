@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ActividadService } from 'src/app/core/interceptores/actividad.service';
 import { LoginService } from 'src/app/core/services/login/login.service';
+import { MenuService } from 'src/app/core/services/menu/menu.service';
 import { RegistroService } from 'src/app/core/services/registro/registro.service';
 import { UtilService } from 'src/app/core/services/util/util.service';
 
@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
     private login: LoginService,
     private util: UtilService,
     private router: Router,
-    private actividad: ActividadService,
     private route:ActivatedRoute
   ) {}
   ngOnInit() {
@@ -58,13 +57,14 @@ export class LoginComponent implements OnInit {
       this.login.sendLogin(this.numeroCuenta, this.password).subscribe({
         next: (e) => {
           if (e.acceso) {
-            this.actividad.guardaActividad();
             sessionStorage.setItem('idUser', e.id_usuario.toString());
             this.router.navigateByUrl('cuenta/inicio');
           }
         },
         error: (e) => {
-          this.util.enviarAlerta('warning', '#ff8100', '', e.error.mensaje);
+          if(e.error!=null){
+            this.util.enviarAlerta('warning', '#ff8100', '', e.error.mensaje);
+          }
         },
       });
     }

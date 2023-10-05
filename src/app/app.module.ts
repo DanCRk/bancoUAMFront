@@ -7,7 +7,7 @@ import { CommonsModule } from './common/commons.module';
 import { LoginModule } from './modules/inicio/secciones/login/login.module';
 import { InicioModule } from './modules/inicio/inicio.module';
 import { AppProperties } from './core/interfaces/appProperties/app-properties';
-import { ConfigService } from './core/services/config/iniciocuenta.service';
+import { ConfigService } from './core/services/config/configService.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TodasCuentasModule } from './modules/inicio/secciones/todas-cuentas/todas-cuentas.module';
 import { FormsModule } from '@angular/forms'; 

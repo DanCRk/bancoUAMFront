@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Menu } from 'src/app/core/interfaces/menu/menu';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/core/services/menu/menu.service';
-import { ActividadService } from 'src/app/core/interceptores/actividad.service';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +18,6 @@ export class HeaderComponent implements OnInit {
   constructor(
     private menuService: MenuService,
     private router: Router,
-    private actividad: ActividadService
   ) {
     this.menu = menuService.menu;
   }

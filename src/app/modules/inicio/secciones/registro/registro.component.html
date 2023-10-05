@@ -26,6 +26,10 @@
     <div class="user-box">
       <input type="password" name="" required="true" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"/>
       <label>Contraseña</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="" required="true" [(ngModel)]="password2" [ngModelOptions]="{standalone: true}"/>
+      <label>Confirmar contraseña</label>
       <p class="texto__blanco">La Contraseña debe incluir una letra minuscula, mayuscula, numero, caracter especial.</p>
     </div>
     <a class="cursor_pointer" (click)="submitRegister()">

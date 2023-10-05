@@ -11,7 +11,7 @@ export class ErrorInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // se muestra el spinner
-    return next.handle(req).pipe(timeout(5000000),  //TODO Verificar el tiempo de respuesta del servidor
+    return next.handle(req).pipe(timeout(3000000),  //TODO Verificar el tiempo de respuesta del servidor
       catchError(error => this.manejarError(error))
    );
   }

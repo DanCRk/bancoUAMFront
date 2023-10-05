@@ -2,7 +2,6 @@ export interface CuentaUsuario {
   usuairo: Usuario;
   cuenta: Cuenta;
   tarjetaCredito: TarjetaCredito;
-  tarjetaDebito: TarjetaDebito;
   prestamos: Array<Prestamo>;
 }
 
@@ -15,6 +14,7 @@ export interface Usuario {
   fecha_nacimiento: Date;
   fecha_ultimo_acceso: string;
   fecha_creacion: string;
+  password:string
 }
 
 export interface Cuenta {
@@ -32,11 +32,7 @@ export interface TarjetaCredito {
   saldo_actual: number;
   fecha_corte: string;
 }
-export interface TarjetaDebito {
-  id_tarjeta_debito: number;
-  numero_tarjeta: string;
-  fecha_vencimiento: string;
-}
+
 export interface Prestamo {
   id_prestamo: number;
   monto: number;

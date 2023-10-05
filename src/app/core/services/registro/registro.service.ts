@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { ConfigService } from '../config/iniciocuenta.service';
+import { ConfigService } from '../config/configService.service';
 import {
   HttpClient,
   HttpErrorResponse,

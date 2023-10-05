@@ -1,39 +1,74 @@
 <div class="login-box">
-    <h2>Datos Personales</h2>
-    <form>
-      <div class="flex__horizontal flex__spacearround">
-        <div class="user-box">
-          <input type="text" name="" required="true" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}" />
-          <label>Nombre</label>
-        </div>
-        <div class="user-box">
-          <input type="text" name="" required="true" [(ngModel)]="apellido" [ngModelOptions]="{standalone: true}" />
-          <label>Apellido</label>
-        </div>
+  <h2>Datos Personales</h2>
+  <form>
+    <div class="flex__horizontal flex__spacearround">
+      <div class="user-box">
+        <input
+          type="text"
+          name=""
+          
+          [(ngModel)]="nombre"
+          [ngModelOptions]="{ standalone: true }"
+        />
+        <label>Nombre</label>
       </div>
       <div class="user-box">
-        <input type="text" name="" required="true" [(ngModel)]="direccion" [ngModelOptions]="{standalone: true}"/>
-        <label>Direccion</label>
+        <input
+          type="text"
+          name=""
+          
+          [(ngModel)]="apellido"
+          [ngModelOptions]="{ standalone: true }"
+        />
+        <label>Apellido</label>
       </div>
-      <div class="user-box">
-        <input type="text" name="" required="true" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"/>
-        <label>Correo electronico</label>
-      </div>
-      <div class="user-box">
-        <input type="password" name="" required="true" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" />
-        <label>Contraseña</label>
-        <p class="texto__blanco">La Contraseña debe incluir una letra minuscula, mayuscula, numero, caracter especial.</p>
-      </div>
-      <a class="cursor_pointer" >
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Actualizar
+    </div>
+    <div class="user-box">
+      <input
+        type="text"
+        name=""
+        
+        [(ngModel)]="direccion"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <label>Direccion</label>
+    </div>
+    <div class="user-box">
+      <input
+        type="text"
+        name=""
+        
+        [(ngModel)]="email"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <label>Correo electronico</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name=""  [(ngModel)]="password" [ngModelOptions]="{standalone: true}"/>
+      <label>Contraseña</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name=""  [(ngModel)]="password2" [ngModelOptions]="{standalone: true}"/>
+      <label>Confirmar contraseña</label>
+      <p class="texto__blanco">La Contraseña debe incluir una letra minuscula, mayuscula, numero, caracter especial.</p>
+    </div>
+    <div class="botonesDatos">
+    <a class="cursor_pointer actualizarBtn" (click)="actualizarUsuario()">
+      <span class="actualizarSpan"></span>
+      <span class="actualizarSpan"></span>
+      <span class="actualizarSpan"></span>
+      <span class="actualizarSpan"></span>
+      Actualizar
+    </a>
+    
+      <a class="cursor_pointer borrarBtn" (click)="borrarUsuario()">
+        <span class="borrarSpan"></span>
+        <span class="borrarSpan"></span>
+        <span class="borrarSpan"></span>
+        <span class="borrarSpan"></span>
+        Borrar
       </a>
-    </form>
-  </div>
-  <div style="height: 1000px;">
-  
-  </div>
-  
+    </div>
+  </form>
+</div>
+<div style="height: 1000px"></div>

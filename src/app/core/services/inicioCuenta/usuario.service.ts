@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { ConfigService } from '../config/iniciocuenta.service';
+import { ConfigService } from '../config/configService.service';
 import {
   HttpClient,
   HttpErrorResponse,
@@ -10,7 +10,7 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { CuentaUsuario } from '../../interfaces/usuario/usuario';
+import { CuentaUsuario, Usuario } from '../../interfaces/usuario/usuario';
 @Injectable({
   providedIn: 'root',
 })
@@ -34,6 +34,33 @@ export class UsuarioService {
     let params = new HttpParams();
     params = params.append('id_usuario', idUsuario);
     return this.http.get<CuentaUsuario>(this.urlUsuario!, {
+      headers: headers,
+      params: params,
+    });
+  }
+
+  updateUsuario(usuario: Usuario): Observable<any> {
+    let headers = new HttpHeaders();
+    let params = new HttpParams();
+    params = params.append('id_usuario', usuario.idUsuario);
+    params = params.append('nombre', usuario.nombre);
+    params = params.append('apellido', usuario.apellido);
+    params = params.append('direccion', usuario.direccion);
+    params = params.append('correo', usuario.email);
+    params = params.append('password', usuario.password);
+    return this.http.get<any>(this.urlEditarUsuario!, {
+      headers: headers,
+      params: params,
+    });
+  }
+
+  
+
+  deleteUsuario(idUsuario: number): Observable<any> {
+    let headers = new HttpHeaders();
+    let params = new HttpParams();
+    params = params.append('id_usuario', idUsuario);
+    return this.http.delete<any>(this.urlBorrarUsuario!, {
       headers: headers,
       params: params,
     });
