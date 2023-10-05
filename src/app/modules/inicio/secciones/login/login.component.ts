@@ -31,15 +31,15 @@ export class LoginComponent implements OnInit {
   checkInputs(): boolean {
     let pasa = true;
 
-    if (this.numeroCuenta.length < 18) {
+    if (this.numeroCuenta.length < 18 && !this.numeroCuenta.match(this.util.emailExp)) {
       pasa = false;
       this.util.enviarAlerta(
         'warning',
         this.util.colorWarning,
         'Error en el formulario',
-        'Formato en el campo numero de cuenta invalido'
+        'Formato en el campo numero de cuenta o correo invalido'
       );
-    } else if (!this.password.match(this.util.passwordRegex)) {
+    }else if (!this.password.match(this.util.passwordRegex)) {
       pasa = false;
       this.util.enviarAlerta(
         'warning',

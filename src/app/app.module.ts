@@ -12,7 +12,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TodasCuentasModule } from './modules/inicio/secciones/todas-cuentas/todas-cuentas.module';
 import { FormsModule } from '@angular/forms'; 
 import { RegistroModule } from './modules/inicio/secciones/registro/registro.module';
-
+import { MessageService } from 'primeng/api';
 import { ErrorInterceptor } from './core/interceptores/error-interceptor.service';
 import { TodastarjetascreditoComponent } from './modules/inicio/secciones/todastarjetascredito/todastarjetascredito.component';
 import { PrestamosycreditosComponent } from './modules/inicio/secciones/prestamosycreditos/prestamosycreditos.component';
@@ -21,6 +21,8 @@ import { DatosPersonalesComponent } from './modules/cuenta-usuario/secciones/dat
 export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
   return () => injector.get(ConfigService).loadConfiguration();
 }
+
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,7 @@ export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
       multi: true
-    }
+    },MessageService,provideAnimations()
   ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]

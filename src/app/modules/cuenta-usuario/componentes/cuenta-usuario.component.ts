@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CuentaUsuario, Prestamo } from 'src/app/core/interfaces/usuario/usuario';
+import {
+  CuentaUsuario,
+  Prestamo,
+} from 'src/app/core/interfaces/usuario/usuario';
 import { UsuarioService } from 'src/app/core/services/inicioCuenta/usuario.service';
 import { MenuService } from 'src/app/core/services/menu/menu.service';
 import { UtilService } from 'src/app/core/services/util/util.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-cuenta-usuario',
@@ -11,17 +15,18 @@ import { UtilService } from 'src/app/core/services/util/util.service';
   styleUrls: ['./cuenta-usuario.component.css'],
 })
 export class CuentaUsuarioComponent implements OnInit {
-  usuario: CuentaUsuario
+  usuario: CuentaUsuario;
 
+  copy: boolean;
+
+  respuesta:string
 
   constructor(
     private util: UtilService,
     private router: Router,
     private menuService: MenuService,
     private usuarioService: UsuarioService
-  ) {
-
-  }
+  ) {}
 
   ngOnInit(): void {
     if (sessionStorage.getItem('idUser') == null) {
@@ -56,4 +61,22 @@ export class CuentaUsuarioComponent implements OnInit {
     });
     this.menuService.setDatosMenu(2);
   }
+
+  copiar(val: string){
+    let selBox = document.createElement('textarea');
+      selBox.style.position = 'fixed';
+      selBox.style.left = '0';
+      selBox.style.top = '0';
+      selBox.style.opacity = '0';
+      selBox.value = val;
+      document.body.appendChild(selBox);
+      selBox.focus();
+      selBox.select();
+      document.execCommand('copy');
+      document.body.removeChild(selBox);
+      this.copy = true;
+      setTimeout(()=>{
+        this.copy = false;
+      }, 2000)
+    }
 }

@@ -1,30 +1,71 @@
 <h3 class="ultimaConexion">
-  Ultima conexion: <span> {{ usuario?.usuairo.fecha_ultimo_acceso | date}}</span>
+  Ultima conexion:
+  <span> {{ usuario?.usuairo.fecha_ultimo_acceso | date }}</span>
 </h3>
 
 <h2 class="productgrid__title">
-  Buenos dias, {{ usuario?.usuairo.nombre.split(' ')[0] }}
+  Buenos dias, {{ usuario?.usuairo.nombre.split(" ")[0] }}
 </h2>
 <div class="gridCuentas">
-  <div class="bank-account-card article-card flex__vertical">
+  <div class="bank-account-card">
     <h3>Cuenta de Debito</h3>
-    <p>{{ usuario?.cuenta.numeroCuenta }}</p>
-    <p>Disponible: </p>
-    <p>{{ usuario?.cuenta.saldo | currency:'MXN':'symbol' }}</p>
+    <div class="contenidoCuenta">
+      <div>
+        <p>Numero de cuenta: {{ usuario?.cuenta.numeroCuenta }} <i class="ri-clipboard-fill cursor_pointer" (click)="copiar(usuario?.cuenta.numeroCuenta)"></i> </p>
+        <p>
+          Disponible: {{ usuario?.cuenta.saldo | currency : "MXN" : "symbol" }}
+        </p>
+      </div>
+      <div class="botonesDatos">
+        <a class="cursor_pointer transferirBtn">
+          <span class="transferirSpan"></span>
+          <span class="transferirSpan"></span>
+          <span class="transferirSpan"></span>
+          <span class="transferirSpan"></span>
+          Transferir
+        </a>
+      </div>
+    </div>
   </div>
-  <div class="bank-account-card article-card flex__vertical">
-    <h3>Tarjeta de Credito</h3>
-    <p>{{ usuario?.tarjetaCredito.numero_tarjeta }}</p>
-    <p>Disponible: </p>
-    <p>{{ usuario?.tarjetaCredito.saldo_actual | currency:'MXN':'symbol' }}</p>
+  <div class="bank-account-card">
+    <h3>Tarjeta de Credito </h3>
+    <div class="contenidoCuenta">
+      <div>
+        <p>Numero de tarjeta {{ usuario?.tarjetaCredito.numero_tarjeta }} <i class="ri-clipboard-fill cursor_pointer" (click)="copiar(usuario?.tarjetaCredito.numero_tarjeta)"></i></p>
+        <p>
+          Disponible:
+          {{
+            usuario?.tarjetaCredito.saldo_actual | currency : "MXN" : "symbol"
+          }}
+        </p>
+      </div>
+      <div class="botonesDatos">
+        <a class="cursor_pointer pagarBtn">
+          <span class="pagarSpan"></span>
+          <span class="pagarSpan"></span>
+          <span class="pagarSpan"></span>
+          <span class="pagarSpan"></span>
+          Pagar
+        </a>
+        <a class="cursor_pointer comprarBton">
+          <span class="comprarSpan"></span>
+          <span class="comprarSpan"></span>
+          <span class="comprarSpan"></span>
+          <span class="comprarSpan"></span>
+          Comprar
+        </a>
+      </div>
+    </div>
   </div>
-  <div class="bank-account-card article-card flex__vertical">
+  <div class="bank-account-card" *ngFor="let prestamo of usuario?.prestamos">
     <h3>Prestamo</h3>
-    <p>Total: </p>
-    <p>{{ usuario?.prestamos?.[0]?.monto| currency:'MXN':'symbol'  }}</p>
-    <p>Pagado: </p>
-    <p>{{ usuario?.prestamos?.[0]?.pagos_realizados * usuario?.prestamos?.[0]?.pago_mensual| currency:'MXN':'symbol' }}</p>
+    <p>Total: {{ prestamo.monto | currency : "MXN" : "symbol" }}</p>
+    <p>
+      Pagado:
+      {{
+        prestamo.pagos_realizados * prestamo.pago_mensual
+          | currency : "MXN" : "symbol"
+      }}
+    </p>
   </div>
 </div>
-
-
