@@ -1,119 +1,15 @@
-<section class="Seguro">
-  <article>
-    <div style="text-align: center">
-      <h2>
-        ¿Estás protegiendo lo que más amas?<br />
-        Descubre nuestro Seguro de Vida.
-      </h2>
-    </div>
-    <img
-      src="assets/img/inicioComponent1.png"
-      width="470"
-      height="300"
-      alt="null"
-    />
+<div class="inicio">
+  <div class="card__article" *ngFor="let articulo of contenidos">
+    <h2>
+      {{ articulo.titulo }}<br />
+      <span>{{ articulo.subtitulo }}</span>
+    </h2>
+    <img [src]="articulo.imagen" width="470" height="300" alt="null" />
     <p class="infoseg">
-      La vida está llena de incertidumbres, pero tu preocupación por el futuro
-      de tus seres queridos no debería ser una de ellas. Con nuestro Seguro de
-      Vida, puedes tener la tranquilidad de saber que estás brindando seguridad
-      financiera a tu familia en caso de lo inesperado. Nuestro seguro de vida
-      ofrece: <br />
-      Protección Financiera<br />
-      Paz Mental<br />
-      Asesoramiento Profesional
+      {{articulo.descripcion}}
     </p>
-  </article>
-  <article>
-    <div style="text-align: center">
-      <h2>
-        En tu cumpleaños te regalamos la comida en el restaurante de tu
-        preferencia
-      </h2>
-    </div>
-
-    <img
-      src="assets/img/inicioComponent2.jpg"
-      width="400"
-      height="200"
-      alt="null"
-    />
-    <p class="cumple">
-      En BBUAM nos importas, por eso tenemos el gusto de pagar tu comida el dia
-      de tu cumpleaños, consulta terminos y condiciones
-    </p>
-  </article>
-  <article>
-    <div style="text-align: center">
-      <h2>Somos un banco que no discrimina</h2>
-    </div>
-
-    <img
-      src="assets/img/inicioComponent3.jpg"
-      width="400"
-      height="200"
-      alt="null"
-    />
-    <p class="discriminacion">
-      Nuestra visión de inclusión va más allá de las cifras y los números.
-      Celebramos la diversidad de nuestros clientes y empleados, y estamos
-      comprometidos con crear un espacio seguro y acogedor para todas las
-      orientaciones sexuales e identidades de género.
-    </p>
-  </article>
-  <article>
-    <div style="text-align: center">
-      <h2>Descubre una Nueva Era de Inversiones con Nuestro Banco</h2>
-    </div>
-
-    <img
-      src="assets/img/inicioComponent4.jpg"
-      width="400"
-      height="200"
-      alt="null"
-    />
-    <p class="cripto">
-      En BBUAM, creemos en el poder de la innovación financiera y en ofrecer a
-      nuestros clientes oportunidades excepcionales para construir un futuro
-      sólido y próspero. Es por eso que estamos emocionados de presentarte el
-      emocionante mundo de las criptomonedas.
-    </p>
-  </article>
-  <article>
-    <div style="text-align: center">
-      <h2>
-        ¡Vive la Música en Grande!<br />
-        Paga tus Conciertos con Nuestra Tarjeta
-      </h2>
-    </div>
-
-    <img
-      src="assets/img/inicioComponent5.png"
-      width="400"
-      height="200"
-      alt="null"
-    />
-    <p class="concierto">
-      En BBUAM, entendemos la importancia de disfrutar de momentos inolvidables,
-      como conciertos en vivo, sin preocuparte por los detalles financieros. Es
-      por eso que estamos emocionados de presentarte nuestra tarjeta de crédito,
-      la puerta de entrada a una experiencia musical sin complicaciones.
-    </p>
-  </article>
-  <article>
-    <div style="text-align: center">
-      <h2>Nosotros te prestamos para tu casa</h2>
-    </div>
-
-    <img
-      src="assets/img/inicioComponent6.jpg"
-      width="400"
-      height="200"
-      alt="null"
-    />
-    <p class="casa">
-      En BBUAM, hacemos realidad tu sueño de tener una casa, adquiere uno de
-      nuestros prestamos, con una taza de interes muy baja. Ademas te regalamos
-      un seguro de casa durante los primeros 3 años.
-    </p>
-  </article>
-</section>
+    <span *ngFor="let ofrece of articulo.ofrece">
+      {{ofrece}}
+    </span>
+  </div>
+</div>

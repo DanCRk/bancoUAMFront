@@ -377,6 +377,12 @@
   }
 }
 
+@media (min-width:1118) {
+  .esconder__chico{
+    display: none;
+  }
+}
+
 @media (min-width: 600px) {
   @media (min-width: 600px) {
     .header__access__text--mobile {

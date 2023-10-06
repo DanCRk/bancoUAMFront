@@ -1,63 +1,49 @@
-
- .Seguro {
-     font-size: 10px;
-     font-family: "Segoe UI";
-     width: 500px;
-     margin: 0 auto;
-     text-align: justify;
- }
- section article {
-     background-color: #D6EAF8 ;
-     margin: 0.5rem;
-     border-radius: 2rem;
-     cursor: pointer;
-     transition: box-shadow 0.9s ease;
- }
- section article:hover {
-    box-shadow: 0.5rem 0.5rem 0.5rem #4169E1; /* difuminacion derecha, abajo, izquierda, color*/
-
-}
- .infoseg{
-     font-size: 13px;
-     padding: 1rem;
- }
- .discriminacion {
-     font-size: 13px;
-     
-     padding: 1rem;
- }
- .cumple {
-    font-size: 13px;
-    
-    padding: 1rem;
-}
- .cripto {
-    font-size: 13px;
-    
-    padding: 1rem;
-}
-.concierto {
-    font-size: 13px;
-    
-    padding: 1rem;
+.inicio {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 50px 120px 50px;
+  gap: 40px;
+  text-align: center;
 }
 
-.casa {
-    font-size: 13px;
-    
-    padding: 1rem;
+.card__article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--black-color);
+  color: white;
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
- img {
-     margin: 0 auto;
-     display: flex;
- }
 
- .Comerciales{
-    text-align: center;
- }
- .Comerciales img{
-    display: inline-block;
+.card__article img {
+  width: inherit;
+  height: inherit;
+  max-width: 60%;
+  border-radius: 10px;
+}
 
- }
+.card__article span {
+  font-weight: normal;
+}
 
- 
+.infoseg{
+    line-height: 30px;
+    text-align: start;
+}
+
+@media screen and (min-width: 1118px) {
+  .inicio {
+    margin-top: 130px;
+    padding: 30px 250px 120px 250px;
+  }
+
+  .card__article img {
+    border-radius: 20px;
+  }
+}
