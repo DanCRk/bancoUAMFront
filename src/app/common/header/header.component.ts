@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Menu } from 'src/app/core/interfaces/menu/menu';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/core/services/menu/menu.service';
+import { TokenService } from 'src/app/core/services/token/token.service';
 
 @Component({
   selector: 'app-header',
@@ -11,13 +12,14 @@ import { MenuService } from 'src/app/core/services/menu/menu.service';
 export class HeaderComponent implements OnInit {
   menu: Menu;
 
-  loginOrcuenta = false
+  loginOrcuenta = false;
 
-  nombre = ''
+  nombre = '';
 
   constructor(
     private menuService: MenuService,
     private router: Router,
+    private tokenService: TokenService
   ) {
     this.menu = menuService.menu;
   }
@@ -25,18 +27,27 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.menuService.setDatosMenu(1);
 
-    this.menuService.actualizatBotonesDerecha.subscribe((e)=>{
-      if(e==1){
-        this.loginOrcuenta = false
+    this.menuService.actualizatBotonesDerecha.subscribe((e) => {
+      if (e == 1) {
+        this.loginOrcuenta = false;
       }
-      if(e==2){
-        this.loginOrcuenta = true
+      if (e == 2) {
+        this.loginOrcuenta = true;
       }
-    })
+    });
 
-    this.menuService.actualizatUsuario.subscribe((e)=>{
-      this.nombre = e
-    })
+    this.tokenService.getToken().subscribe({
+      next: (e) => {
+        sessionStorage.setItem('token',e.token)
+      },
+      error: (e) => {
+
+      },
+    });
+
+    this.menuService.actualizatUsuario.subscribe((e) => {
+      this.nombre = e;
+    });
   }
 
   showMenu = (toggleId: string, navId: string) => {
@@ -54,6 +65,6 @@ export class HeaderComponent implements OnInit {
   }
 
   clearSesion() {
-    sessionStorage.clear()
+    sessionStorage.removeItem('idUser');
   }
 }

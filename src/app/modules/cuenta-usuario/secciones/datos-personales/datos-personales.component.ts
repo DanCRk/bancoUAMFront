@@ -39,11 +39,11 @@ export class DatosPersonalesComponent implements OnInit {
       });
     }
 
-    this.nombre = this.service.usuarioss[0].usuairo.nombre
-    this.apellido = this.service.usuarioss[0].usuairo.apellido
-    this.email = this.service.usuarioss[0].usuairo.email
-    this.direccion = this.service.usuarioss[0].usuairo.direccion
-    this.fechaNacimiento = this.service.usuarioss[0].usuairo.fecha_nacimiento
+    this.nombre = this.service.usuarioss[0]?.usuairo.nombre
+    this.apellido = this.service.usuarioss[0]?.usuairo.apellido
+    this.email = this.service.usuarioss[0]?.usuairo.email
+    this.direccion = this.service.usuarioss[0]?.usuairo.direccion
+    this.fechaNacimiento = this.service.usuarioss[0]?.usuairo.fecha_nacimiento
       
   }
 
@@ -90,7 +90,7 @@ export class DatosPersonalesComponent implements OnInit {
                 'success'
               ).then(()=>{
                   this.router.navigateByUrl('inicio')
-                  sessionStorage.clear()
+                  sessionStorage.removeItem('idUser')
               })
             }else{
               Swal.fire(

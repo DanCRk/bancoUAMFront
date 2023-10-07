@@ -17,6 +17,8 @@ export class ErrorInterceptor implements HttpInterceptor {
   }
   manejarError(error: HttpErrorResponse) {
 
+    console.log(error)
+
     if(error.status==406){
       Swal.fire({
         position: 'center',
@@ -25,6 +27,17 @@ export class ErrorInterceptor implements HttpInterceptor {
         titleText:`${error.error.mensaje}`,
         showConfirmButton: true, //cambio meno, true
       });
+    }else if(error.status==401){
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        iconColor:'#aa1010',
+        title: 'Error Interno',
+        text: `Por favor recargue la pagina`,
+        showConfirmButton: true,
+        
+      });
+      //this.route.navigate(['/'])
     }else if(error.status==0){
       Swal.fire({
         position: 'center',

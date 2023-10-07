@@ -59,6 +59,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "bancoUAM:build",
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "browserTarget": "bancoUAM:build:production"

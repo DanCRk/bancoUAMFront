@@ -198,6 +198,7 @@ figure {
 .transaction__data__amount {
   font-weight: 600;
   margin-bottom: 4px;
+  text-align: right;
 }
 
 .transaction__data__amount--depot {
@@ -216,7 +217,7 @@ figure {
 
 .transaction__who--apple figure,
 .transaction__who--amazon figure {
-  background-color: black;
+  background-color: var(--amarillo-principal);
 }
 
 .transaction__who--tom figure {
@@ -230,4 +231,8 @@ figure {
 
 .card__button:hover{
   box-shadow: -3px 2px 19px var(--black-color);
+}
+
+.esconder__signo{
+  display: none;
 }

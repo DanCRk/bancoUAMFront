@@ -21,60 +21,21 @@
           <div class="indicator"></div>
           <div class="contents">
               <div class="content">
-                  <div class="today">
-                      <div>Today, 9 Jan</div>
-                      <div>-$430.08</div>
-                  </div>
-                  <div class="transaction">
+                  <div class="transaction" *ngFor="let transaccion of usuario?.transacciones">
                       <div class="transaction__who transaction__who--apple">
                           <figure><img src="https://i.ibb.co/Br7zP94/apple.png"></figure>
                           <div class="transaction__who__about">
-                              <div class="transaction__who__name">Apple</div>
-                              <div class="transaction__who__type">Appliances</div>
+                              <div class="transaction__who__name">{{transaccion.concepto}}</div>
+                              <div class="transaction__who__type">{{transaccion.descripcion}}</div>
                           </div>
                       </div>
                       <div class="transaction__data">
-                          <div class="transaction__data__amount transaction__data__amount--menos">- $1897.00</div>
-                          <div class="transaction__data__date">11:45 AM</div>
-                      </div>
-                  </div>
-                  <div class="transaction">
-                      <div class="transaction__who transaction__who--tom">
-                          <figure><img src="https://i.ibb.co/QMx2mJv/tom.png"></figure>
-                          <div class="transaction__who__about">
-                              <div class="transaction__who__name">Tom S.</div>
-                              <div class="transaction__who__type">Refill</div>
-                          </div>
-                      </div>
-                      <div class="transaction__data">
-                          <div class="transaction__data__amount transaction__data__amount--depot">+ $250.00</div>
-                          <div class="transaction__data__date">11:45 AM</div>
-                      </div>
-                  </div>
-                  <div class="transaction">
-                      <div class="transaction__who transaction__who--amazon">
-                          <figure><img src="https://i.ibb.co/f06Bptb/amazon.png"></figure>
-                          <div class="transaction__who__about">
-                              <div class="transaction__who__name">Amazon</div>
-                              <div class="transaction__who__type">Purchases</div>
-                          </div>
-                      </div>
-                      <div class="transaction__data">
-                          <div class="transaction__data__amount">- $32.76</div>
-                          <div class="transaction__data__date">4:12 AM</div>
-                      </div>
-                  </div>
-              </div>
-              <div class="content">
-                  <div class="transaction">
-                      <div class="transaction__who">
-                          <div class="transaction__who__about">
-                              <div class="transaction__who__name">Deposit</div>
-                          </div>
-                      </div>
-                      <div class="transaction__data">
-                          <div class="transaction__data__amount transaction__data__amount--depot">+ $250.00</div>
-                          <div class="transaction__data__date">11:45 AM</div>
+                          <div class="transaction__data__amount" [ngClass]="{'transaction__data__amount--menos':transaccion.tipo==1,
+                          'transaction__data__amount--depot':transaccion.tipo==0}">
+                          <span [ngClass]="{'esconder__signo':transaccion.tipo==0}"> - </span>
+                          <span [ngClass]="{'esconder__signo':transaccion.tipo==1}"> + </span>
+                          {{transaccion.monto | currency  }}</div>
+                          <div class="transaction__data__date">{{transaccion.fecha_transaccion | date:'dd MMM h:mm a'}}</div>
                       </div>
                   </div>
               </div>

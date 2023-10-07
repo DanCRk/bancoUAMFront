@@ -45,6 +45,7 @@ export class CuentaUsuarioComponent implements OnInit {
         .getUsuario(sessionStorage.getItem('idUser'))
         .subscribe({
           next: (e) => {
+            this.usuarioService.usuarioss.push(e);
             this.menuService.actualizatUsuario.emit(
               e.usuairo.nombre + ' ' + e.usuairo.apellido
             );
@@ -52,12 +53,11 @@ export class CuentaUsuarioComponent implements OnInit {
             let cadena = e.cuenta.numeroCuenta;
             let resultado = cadena.match(/.{1,4}/g);
             this.usuario.cuenta.numeroCuenta = resultado.join(' ');
-            cadena = this.usuario.tarjetaCredito.numero_tarjeta;
+            cadena = this.usuario.tarjetaCredito?.numero_tarjeta;
             this.usuario.tarjetaCredito.numero_tarjeta = cadena
               .match(/.{1,4}/g)
               .join(' ');
 
-            this.usuarioService.usuarioss.push(e);
           },
           error: (e) => {},
         });

@@ -1,0 +1,6 @@
+{
+    "/api": {
+      "target": "https://bancouam.tplinkdns.com",
+      "secure": false
+    }
+  }
