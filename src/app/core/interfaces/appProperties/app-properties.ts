@@ -8,4 +8,5 @@ export interface AppProperties {
     urlEditarUsuario:string;
     urlBorrarUsuario:string;
     urlToken:string
+    urlTransaccion:string
 }

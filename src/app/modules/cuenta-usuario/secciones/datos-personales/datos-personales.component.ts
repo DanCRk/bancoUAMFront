@@ -69,6 +69,8 @@ export class DatosPersonalesComponent implements OnInit {
 
     this.service.updateUsuario(this.service.usuarioss[0].usuairo).subscribe({
       next: (e) => {
+        this.service.usuarioss[0].usuairo.nombre = this.nombre
+        this.service.usuarioss[0].usuairo.apellido = this.apellido
         this.util.enviarAlerta('success', '#7fffc1', "Actualizado!", e.mensaje);
       },
       error: (e) => {

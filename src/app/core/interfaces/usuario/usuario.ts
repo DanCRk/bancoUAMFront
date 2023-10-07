@@ -43,6 +43,8 @@ export interface Transaccion{
   nombre_remitente:string
   nombre_destinatario:string
   descripcion:string
+  cuenta_remitente:string
+  cuenta_destinatario:string
 }
 
 export interface Prestamo {

@@ -26,7 +26,9 @@ export class CuentaUsuarioComponent implements OnInit {
     private router: Router,
     private menuService: MenuService,
     private usuarioService: UsuarioService
-  ) {}
+  ) {
+    this.usuario = usuarioService.usuarioss[0]
+  }
 
   ngOnInit(): void {
     if (sessionStorage.getItem('idUser') == null) {
@@ -49,7 +51,7 @@ export class CuentaUsuarioComponent implements OnInit {
             this.menuService.actualizatUsuario.emit(
               e.usuairo.nombre + ' ' + e.usuairo.apellido
             );
-            this.usuario = e;
+            this.usuario = this.usuarioService.usuarioss[0];
             let cadena = e.cuenta.numeroCuenta;
             let resultado = cadena.match(/.{1,4}/g);
             this.usuario.cuenta.numeroCuenta = resultado.join(' ');
