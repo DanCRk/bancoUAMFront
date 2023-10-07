@@ -1,11 +1,11 @@
 {
-    "urlToken":"https://189.228.108.47:8009/bancoUAM/seguridad/token",
+    "urlToken":"https://bancouam.tplinkdns.com:8009/bancoUAM/seguridad/token",
     "user":"us_bancouam",
     "pass":"bancouam123",
-    "urlLogin":"https://189.228.108.47:8008/bancoUAM/seguridad/login",
-    "urlMenu":"https://189.228.108.47:8011/bancoUAM/menus",
-    "urlRegistro":"https://189.228.108.47:8010/bancoUAM/seguridad/registro",
-    "urlEditarUsuario":"https://189.228.108.47:8012/bancoUAM/cuenta/editarUsuario",
-    "urlBorrarUsuario":"https://b189.228.108.47:8012/bancoUAM/cuenta/borrarUsuario",
-    "urlUsuario":"https://189.228.108.47:8012/bancoUAM/cuenta/usuario"
+    "urlLogin":"https://bancouam.tplinkdns.com:8008/bancoUAM/seguridad/login",
+    "urlMenu":"https://bancouam.tplinkdns.com:8011/bancoUAM/menus",
+    "urlRegistro":"https://bancouam.tplinkdns.com:8010/bancoUAM/seguridad/registro",
+    "urlEditarUsuario":"https://bancouam.tplinkdns.com:8012/bancoUAM/cuenta/editarUsuario",
+    "urlBorrarUsuario":"https://bancouam.tplinkdns.com:8012/bancoUAM/cuenta/borrarUsuario",
+    "urlUsuario":"https://bancouam.tplinkdns.com:8012/bancoUAM/cuenta/usuario"
 }
