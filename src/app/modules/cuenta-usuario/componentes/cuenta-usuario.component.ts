@@ -19,7 +19,7 @@ export class CuentaUsuarioComponent implements OnInit {
 
   copy: boolean;
 
-  respuesta:string
+  respuesta: string;
 
   constructor(
     private util: UtilService,
@@ -40,43 +40,46 @@ export class CuentaUsuarioComponent implements OnInit {
         .then(() => {
           this.router.navigateByUrl('inicio');
         });
-    }
-    this.usuarioService.getUsuario(sessionStorage.getItem('idUser')).subscribe({
-      next: (e) => {
-        this.menuService.actualizatUsuario.emit(
-          e.usuairo.nombre + ' ' + e.usuairo.apellido
-        );
-        this.usuario = e;
-        let cadena = e.cuenta.numeroCuenta;
-        let resultado = cadena.match(/.{1,4}/g);
-        this.usuario.cuenta.numeroCuenta = resultado.join(' ');
-        cadena = this.usuario.tarjetaCredito.numero_tarjeta;
-        this.usuario.tarjetaCredito.numero_tarjeta = cadena
-          .match(/.{1,4}/g)
-          .join(' ');
+    } else {
+      this.usuarioService
+        .getUsuario(sessionStorage.getItem('idUser'))
+        .subscribe({
+          next: (e) => {
+            this.menuService.actualizatUsuario.emit(
+              e.usuairo.nombre + ' ' + e.usuairo.apellido
+            );
+            this.usuario = e;
+            let cadena = e.cuenta.numeroCuenta;
+            let resultado = cadena.match(/.{1,4}/g);
+            this.usuario.cuenta.numeroCuenta = resultado.join(' ');
+            cadena = this.usuario.tarjetaCredito.numero_tarjeta;
+            this.usuario.tarjetaCredito.numero_tarjeta = cadena
+              .match(/.{1,4}/g)
+              .join(' ');
 
-        this.usuarioService.usuarioss.push(e);
-      },
-      error: (e) => {},
-    });
+            this.usuarioService.usuarioss.push(e);
+          },
+          error: (e) => {},
+        });
+    }
     this.menuService.setDatosMenu(2);
   }
 
-  copiar(val: string){
+  copiar(val: string) {
     let selBox = document.createElement('textarea');
-      selBox.style.position = 'fixed';
-      selBox.style.left = '0';
-      selBox.style.top = '0';
-      selBox.style.opacity = '0';
-      selBox.value = val;
-      document.body.appendChild(selBox);
-      selBox.focus();
-      selBox.select();
-      document.execCommand('copy');
-      document.body.removeChild(selBox);
-      this.copy = true;
-      setTimeout(()=>{
-        this.copy = false;
-      }, 2000)
-    }
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = val;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+    this.copy = true;
+    setTimeout(() => {
+      this.copy = false;
+    }, 2000);
+  }
 }

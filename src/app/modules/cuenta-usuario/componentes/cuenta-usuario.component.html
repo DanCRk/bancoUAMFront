@@ -1,71 +1,85 @@
-<h3 class="ultimaConexion">
-  Ultima conexion:
-  <span> {{ usuario?.usuairo.fecha_ultimo_acceso | date }}</span>
-</h3>
-
-<h2 class="productgrid__title">
-  Buenos dias, {{ usuario?.usuairo.nombre.split(" ")[0] }}
-</h2>
-<div class="gridCuentas">
-  <div class="bank-account-card">
-    <h3>Cuenta de Debito</h3>
-    <div class="contenidoCuenta">
-      <div>
-        <p>Numero de cuenta: {{ usuario?.cuenta.numeroCuenta }} <i class="ri-clipboard-fill cursor_pointer" (click)="copiar(usuario?.cuenta.numeroCuenta)"></i> </p>
-        <p>
-          Disponible: {{ usuario?.cuenta.saldo | currency : "MXN" : "symbol" }}
-        </p>
+<div class="bank">
+  <div class="mobile">
+      <div class="profile">
+          <figure class="profile__avatar"><img src="https://i.ibb.co/G78wzN3/sophie.png"></figure>
+          <div class="profile__name">Buenos dias, {{ usuario?.usuairo.nombre }}</div>
       </div>
-      <div class="botonesDatos">
-        <a class="cursor_pointer transferirBtn">
-          <span class="transferirSpan"></span>
-          <span class="transferirSpan"></span>
-          <span class="transferirSpan"></span>
-          <span class="transferirSpan"></span>
-          Transferir
-        </a>
+      <div class="balance">
+          <div class="balance__text">Balance en cuenta</div>
+          <div class="balance__amount">{{ usuario?.cuenta.saldo | currency : "MXN" : "symbol" }}</div>
       </div>
-    </div>
-  </div>
-  <div class="bank-account-card">
-    <h3>Tarjeta de Credito </h3>
-    <div class="contenidoCuenta">
-      <div>
-        <p>Numero de tarjeta {{ usuario?.tarjetaCredito.numero_tarjeta }} <i class="ri-clipboard-fill cursor_pointer" (click)="copiar(usuario?.tarjetaCredito.numero_tarjeta)"></i></p>
-        <p>
-          Disponible:
-          {{
-            usuario?.tarjetaCredito.saldo_actual | currency : "MXN" : "symbol"
-          }}
-        </p>
+      <div class="card">
+          <div class="card__information">
+              <div class="card__information__text">Tu numero de cuenta</div>
+          </div>
+          <button class="card__button cursor_pointer" (click)="copiar(usuario?.cuenta?.numeroCuenta)">{{usuario?.cuenta?.numeroCuenta}}</button>
       </div>
-      <div class="botonesDatos">
-        <a class="cursor_pointer pagarBtn">
-          <span class="pagarSpan"></span>
-          <span class="pagarSpan"></span>
-          <span class="pagarSpan"></span>
-          <span class="pagarSpan"></span>
-          Pagar
-        </a>
-        <a class="cursor_pointer comprarBton">
-          <span class="comprarSpan"></span>
-          <span class="comprarSpan"></span>
-          <span class="comprarSpan"></span>
-          <span class="comprarSpan"></span>
-          Comprar
-        </a>
+      <div class="tabs">
+          <nav class="nav">
+              <div class="nav__tab nav__tab--active"><span class="nav__tab__text" >TRANSACCIONES</span></div>
+          </nav>
+          <div class="indicator"></div>
+          <div class="contents">
+              <div class="content">
+                  <div class="today">
+                      <div>Today, 9 Jan</div>
+                      <div>-$430.08</div>
+                  </div>
+                  <div class="transaction">
+                      <div class="transaction__who transaction__who--apple">
+                          <figure><img src="https://i.ibb.co/Br7zP94/apple.png"></figure>
+                          <div class="transaction__who__about">
+                              <div class="transaction__who__name">Apple</div>
+                              <div class="transaction__who__type">Appliances</div>
+                          </div>
+                      </div>
+                      <div class="transaction__data">
+                          <div class="transaction__data__amount transaction__data__amount--menos">- $1897.00</div>
+                          <div class="transaction__data__date">11:45 AM</div>
+                      </div>
+                  </div>
+                  <div class="transaction">
+                      <div class="transaction__who transaction__who--tom">
+                          <figure><img src="https://i.ibb.co/QMx2mJv/tom.png"></figure>
+                          <div class="transaction__who__about">
+                              <div class="transaction__who__name">Tom S.</div>
+                              <div class="transaction__who__type">Refill</div>
+                          </div>
+                      </div>
+                      <div class="transaction__data">
+                          <div class="transaction__data__amount transaction__data__amount--depot">+ $250.00</div>
+                          <div class="transaction__data__date">11:45 AM</div>
+                      </div>
+                  </div>
+                  <div class="transaction">
+                      <div class="transaction__who transaction__who--amazon">
+                          <figure><img src="https://i.ibb.co/f06Bptb/amazon.png"></figure>
+                          <div class="transaction__who__about">
+                              <div class="transaction__who__name">Amazon</div>
+                              <div class="transaction__who__type">Purchases</div>
+                          </div>
+                      </div>
+                      <div class="transaction__data">
+                          <div class="transaction__data__amount">- $32.76</div>
+                          <div class="transaction__data__date">4:12 AM</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="content">
+                  <div class="transaction">
+                      <div class="transaction__who">
+                          <div class="transaction__who__about">
+                              <div class="transaction__who__name">Deposit</div>
+                          </div>
+                      </div>
+                      <div class="transaction__data">
+                          <div class="transaction__data__amount transaction__data__amount--depot">+ $250.00</div>
+                          <div class="transaction__data__date">11:45 AM</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-    </div>
-  </div>
-  <div class="bank-account-card" *ngFor="let prestamo of usuario?.prestamos">
-    <h3>Prestamo</h3>
-    <p>Total: {{ prestamo.monto | currency : "MXN" : "symbol" }}</p>
-    <p>
-      Pagado:
-      {{
-        prestamo.pagos_realizados * prestamo.pago_mensual
-          | currency : "MXN" : "symbol"
-      }}
-    </p>
   </div>
 </div>
+

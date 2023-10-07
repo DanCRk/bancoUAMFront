@@ -23,6 +23,7 @@ export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
 }
 
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { TransferirComponent } from './modules/cuenta-usuario/secciones/transferir/transferir.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
     TodastarjetascreditoComponent,
     PrestamosycreditosComponent,
     DatosPersonalesComponent,
+    TransferirComponent,
   ],
   imports: [
     BrowserModule,

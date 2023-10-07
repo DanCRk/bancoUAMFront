@@ -12,6 +12,7 @@ import { PrestamosycreditosComponent } from './modules/inicio/secciones/prestamo
 import { LoginComponent } from './modules/inicio/secciones/login/login.component';
 import { CuentaUsuarioComponent } from './modules/cuenta-usuario/componentes/cuenta-usuario.component';
 import { DatosPersonalesComponent } from './modules/cuenta-usuario/secciones/datos-personales/datos-personales.component';
+import { TransferirComponent } from './modules/cuenta-usuario/secciones/transferir/transferir.component';
 
 const routes: Routes = [
   {
@@ -77,6 +78,11 @@ const routes: Routes = [
   {
     path: 'cuenta/administrar/personales',
     component: DatosPersonalesComponent,
+    title: 'prestamos y creditos | BBUAM',
+  },
+  {
+    path: 'cuenta/transferir/acuentasbbuam',
+    component: TransferirComponent,
     title: 'prestamos y creditos | BBUAM',
   },
   {

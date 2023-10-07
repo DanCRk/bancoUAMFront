@@ -7,6 +7,8 @@
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
   --black-color: hsl(220, 24%, 12%);
+  --amarillo-principal: #ffa400;
+  --amarillo-secundario: #f8cd51;
   --black-color-light: hsl(220, 24%, 15%);
   --black-color-lighten: hsl(220, 20%, 18%);
   --white-color: #fff;
@@ -99,4 +101,221 @@ a {
 
 .texto__blanco{
   color: #fff;
+}
+
+.transferirSpan:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffa400);
+  animation: btn-anim1 1s linear infinite;
+}
+
+.transferirSpan:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #ffa400);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+.transferirSpan:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #ffa400);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.transferirSpan:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #ffa400);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+.transferirBtn:hover {
+  background: #ffa400;
+  color: var(--black-color);
+  border: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ffa400, 0 0 25px #ffa400, 0 0 50px #ffa400,
+    0 0 100px #ffa400;
+}
+
+.pagarSpan:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #9933ff);
+  animation: btn-anim1 1s linear infinite;
+}
+
+.pagarSpan:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #9933ff);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+.pagarSpan:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #9933ff);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.pagarSpan:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #9933ff);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+.pagarBtn:hover {
+  background: #9933ff;
+  color: var(--black-color);
+  border: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #9933ff, 0 0 25px #9933ff, 0 0 50px #9933ff,
+    0 0 100px #9933ff;
+}
+
+.comprarSpan:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff99cc);
+  animation: btn-anim1 1s linear infinite;
+}
+
+.comprarSpan:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #ff99cc);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+.comprarSpan:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #ff99cc);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.comprarSpan:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #ff99cc);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+.comprarBton:hover {
+  background: #ff99cc;
+  color: var(--black-color);
+  border: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ff99cc, 0 0 25px #ff99cc, 0 0 50px #ff99cc,
+    0 0 100px #ff99cc;
+}
+
+.botonesDatos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: start;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+
+.botonesDatos a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+@media screen and (min-width: 960px) {
+  .botonesDatos {
+    display: flex;
+    margin-top: 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
 }
