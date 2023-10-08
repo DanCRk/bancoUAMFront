@@ -40,6 +40,12 @@ export class PagarPrestamoComponent {
 
   transferir() {
     if (this.checkInputs()) {
+      if(this.usuario.usuarioss[0]?.prestamos==null){
+        this.util.enviarAlerta('success', '#7fffc1', 'Cuidado!', 'No cuenta con prestamos activos');
+        return
+      }else{
+        this.monto = this.usuario.usuarioss[0].prestamos[0].pago_mensual
+      }
       let transaccion: Transaccion = {
         isAdd: 0,
         concepto: this.concepto,
@@ -51,7 +57,7 @@ export class PagarPrestamoComponent {
         descripcion: this.descripcion,
         fecha_transaccion: null,
         id_transaccion: null,
-        monto: this.usuario.usuarioss[0]?.prestamos[0]?.pago_mensual,
+        monto: this.monto,
         nombre_destinatario: null,
         nombre_remitente: null,
         tipo: 3,
