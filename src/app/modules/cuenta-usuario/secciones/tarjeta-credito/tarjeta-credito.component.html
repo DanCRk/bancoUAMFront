@@ -74,14 +74,14 @@
               <div
                 class="transaction__data__amount"
                 [ngClass]="{
-                  'transaction__data__amount--menos': transaccion.isAdd == 1,
-                  'transaction__data__amount--depot': transaccion.isAdd == 0
+                  'transaction__data__amount--menos': transaccion.nombre_remitente ==null,
+                  'transaction__data__amount--depot': transaccion.isAdd == 1
                 }"
               >
-                <span [ngClass]="{ esconder__signo: transaccion.isAdd == 0 }">
+                <span [ngClass]="{ esconder__signo: transaccion.isAdd == 1 }">
                   -
                 </span>
-                <span [ngClass]="{ esconder__signo: transaccion.isAdd == 1 }">
+                <span [ngClass]="{ esconder__signo: transaccion.isAdd == 0 }">
                   +
                 </span>
                 {{ transaccion.monto | currency }}

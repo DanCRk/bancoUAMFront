@@ -1,1 +1,44 @@
-<p>pagar-tarjeta works!</p>
+<div class="login-box">
+    <h2>Pagar Prestamo</h2>
+    <form>
+
+      <div class="user-box">
+        <input
+          type="number"
+          [(ngModel)]="monto"
+          [ngModelOptions]="{standalone: true}"
+        />
+        <label>Monto</label>
+      </div>
+
+      <div class="user-box">
+        <input
+          type="text"
+          [(ngModel)]="concepto"
+          [ngModelOptions]="{standalone: true}"
+        />
+        <label>Concepto</label>
+      </div>
+
+      <div class="user-box">
+        <input
+        type="textarea"
+          [(ngModel)]="descripcion"
+          [ngModelOptions]="{standalone: true}"
+        />
+        <label>Descripcion</label>
+      </div>
+
+      <div class="botonesDatos">
+      
+        <a class="cursor_pointer transferirBtn" (click)="transferir()">
+          <span class="transferirSpan"></span>
+          <span class="transferirSpan"></span>
+          <span class="transferirSpan"></span>
+          <span class="transferirSpan"></span>
+          Pagar
+        </a>
+      </div>
+    </form>
+  </div>
+  <div style="height: 1000px"></div>

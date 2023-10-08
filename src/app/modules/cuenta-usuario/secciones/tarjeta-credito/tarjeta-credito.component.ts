@@ -65,6 +65,8 @@ export class TarjetaCreditoComponent implements OnInit {
         }
       }
     }
+
+    console.log(this.usuario.transacciones)
     
 
     this.menuService.setDatosMenu(2);
