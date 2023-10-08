@@ -11,13 +11,13 @@ import { UtilService } from 'src/app/core/services/util/util.service';
 export class PagarPrestamoComponent {
   monto: number;
   concepto: string = 'Pago a Prestamo';
-  descripcion: string;
+  descripcion: string='';
 
   constructor(private util: UtilService, private usuario: UsuarioService) {}
 
   checkInputs(): boolean {
     let pasa = true;
- if (this.concepto.length < 0) {
+ if (this.concepto.length <= 0) {
       pasa = false;
       this.util.enviarAlerta(
         'warning',
@@ -25,7 +25,7 @@ export class PagarPrestamoComponent {
         'Error en el formulario',
         'Formato en el campo direccion concepto no puede ser vacio'
       );
-    } else if (this.descripcion.length < 0) {
+    } else if (this.descripcion.length <= 0) {
       pasa = false;
       this.util.enviarAlerta(
         'warning',

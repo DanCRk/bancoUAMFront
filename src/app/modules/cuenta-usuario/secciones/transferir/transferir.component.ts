@@ -9,10 +9,10 @@ import { UtilService } from 'src/app/core/services/util/util.service';
   styleUrls: ['./transferir.component.css'],
 })
 export class TransferirComponent {
-  monto: number;
-  cuenta_destinataria: string;
-  concepto: string;
-  descripcion: string;
+  monto: number=0;
+  cuenta_destinataria: string='';
+  concepto: string='';
+  descripcion: string='';
 
   constructor(private util: UtilService, private usuario: UsuarioService) {}
 
@@ -27,15 +27,15 @@ export class TransferirComponent {
         'Error en el formulario',
         'Formato en el campo cuenta destinataria invalido'
       );
-    } else if (this.monto < 0) {
+    } else if (this.monto <= 0) {
       pasa = false;
       this.util.enviarAlerta(
         'warning',
         this.util.colorWarning,
         'Error en el formulario',
-        'El monto no puede ser negativo'
+        'El monto no puede ser menor a 0'
       );
-    } else if (this.concepto.length < 0) {
+    } else if (this.concepto.length <= 0) {
       pasa = false;
       this.util.enviarAlerta(
         'warning',
@@ -43,7 +43,7 @@ export class TransferirComponent {
         'Error en el formulario',
         'Formato en el campo direccion concepto no puede ser vacio'
       );
-    } else if (this.descripcion.length < 0) {
+    } else if (this.descripcion.length <= 0) {
       pasa = false;
       this.util.enviarAlerta(
         'warning',
