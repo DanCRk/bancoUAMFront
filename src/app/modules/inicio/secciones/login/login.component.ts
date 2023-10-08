@@ -22,9 +22,7 @@ export class LoginComponent implements OnInit {
     private route:ActivatedRoute
   ) {}
   ngOnInit() {
-
     this.tipo = this.route.snapshot.params['tipo']
-    console.log(this.tipo)
 
   }
 
@@ -58,7 +56,13 @@ export class LoginComponent implements OnInit {
         next: (e) => {
           if (e.acceso) {
             sessionStorage.setItem('idUser', e.id_usuario.toString());
-            this.router.navigateByUrl('cuenta/inicio');
+            if(this.tipo==3){
+              this.router.navigateByUrl('cuenta/prestamos');
+            }else if (this.tipo==2){
+              this.router.navigateByUrl('cuenta/tarjetaCredito');
+            }else{
+              this.router.navigateByUrl('cuenta/inicio');
+            }
           }
         },
         error: (e) => {

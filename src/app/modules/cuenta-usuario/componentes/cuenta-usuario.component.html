@@ -30,10 +30,10 @@
                           </div>
                       </div>
                       <div class="transaction__data">
-                          <div class="transaction__data__amount" [ngClass]="{'transaction__data__amount--menos':transaccion.tipo==1,
-                          'transaction__data__amount--depot':transaccion.tipo==0}">
-                          <span [ngClass]="{'esconder__signo':transaccion.tipo==0}"> - </span>
-                          <span [ngClass]="{'esconder__signo':transaccion.tipo==1}"> + </span>
+                          <div class="transaction__data__amount" [ngClass]="{'transaction__data__amount--menos':transaccion.isAdd==1,
+                          'transaction__data__amount--depot':transaccion.isAdd==0}">
+                          <span [ngClass]="{'esconder__signo':transaccion.isAdd==0}"> - </span>
+                          <span [ngClass]="{'esconder__signo':transaccion.isAdd==1}"> + </span>
                           {{transaccion.monto | currency  }}</div>
                           <div class="transaction__data__date">{{transaccion.fecha_transaccion | date:'dd MMM h:mm a'}}</div>
                       </div>

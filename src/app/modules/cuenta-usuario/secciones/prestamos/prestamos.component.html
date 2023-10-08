@@ -1,0 +1,96 @@
+<div class="bank extender" *ngIf="!visible" >
+  <div class="mobile">
+    <div class="profile">
+      <figure class="profile__avatar">
+        <img src="https://i.ibb.co/G78wzN3/sophie.png" />
+      </figure>
+      <div class="profile__name">
+        Buenos dias, {{ usuario?.usuairo?.nombre }}
+      </div>
+    </div>
+    <div class="card">
+      <button class="card__button cursor_pointer" (click)="solicitarPrestamo()">Solicitar prestamo</button>
+    </div>
+  </div>
+</div>
+ 
+<div class="bank" *ngIf="visible" >
+  <div class="mobile">
+    <div class="profile">
+      <figure class="profile__avatar">
+        <img src="https://i.ibb.co/G78wzN3/sophie.png" />
+      </figure>
+      <div class="profile__name">
+        Buenos dias, {{ usuario?.usuairo?.nombre }}
+      </div>
+    </div>
+    <div class="balance">
+      <div class="balance__text">Total Prestamo</div>
+      <div class="balance__amount" >
+        {{ usuario?.prestamos?.[0]?.monto | currency : "MXN" : "symbol" }}
+      </div>
+    </div>
+    <div class="card">
+      <div class="card__information">
+        <div class="card__information__text">Restante a Pagar</div>
+      </div>
+      <button class="card__button cursor_pointer" (click)="navegar()">
+{{
+  usuario?.prestamos?.[0]?.monto -
+  usuario?.prestamos?.[0]?.pagos_realizados *
+  usuario?.prestamos?.[0]?.pago_mensual | currency : "MXN" : "symbol"
+        }}
+      </button>
+    </div>
+    <div class="tabs">
+      <nav class="nav">
+        <div class="nav__tab nav__tab--active">
+          <span class="nav__tab__text">PAGOS</span>
+        </div>
+      </nav>
+      <div class="indicator"></div>
+      <div class="contents">
+        <div class="content">
+          <div class="today">
+            <div>Total pagado</div>
+            <div>
+              {{
+                usuario?.prestamos?.[0]?.pagos_realizados *
+                usuario?.prestamos?.[0]?.pago_mensual
+                  | currency : "MXN" : "symbol"
+              }}
+            </div>
+          </div>
+          <div
+            class="transaction"
+            *ngFor="let transaccion of usuario?.transacciones"
+            [ngClass]="{ esconder__signo: transaccion.tipo != 3 }"
+          >
+            <div class="transaction__who transaction__who--apple">
+              <figure><img src="https://i.ibb.co/Br7zP94/apple.png" /></figure>
+              <div class="transaction__who__about">
+                <div class="transaction__who__name">
+                  {{ transaccion.concepto }}
+                </div>
+                <div class="transaction__who__type">
+                  {{ transaccion.descripcion }}
+                </div>
+              </div>
+            </div>
+            <div class="transaction__data transaction__data__amount--menos">
+              <div
+                class="transaction__data__amount transaction__data__amount--depot"
+              >
+                +
+                {{ transaccion.monto | currency }}
+              </div>
+              <div class="transaction__data__date">
+                {{ transaccion.fecha_transaccion | date : "dd MMM h:mm a" }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -24,6 +24,11 @@ export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
 
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { TransferirComponent } from './modules/cuenta-usuario/secciones/transferir/transferir.component';
+import { TarjetaCreditoComponent } from './modules/cuenta-usuario/secciones/tarjeta-credito/tarjeta-credito.component';
+import { PrestamosModule } from './modules/cuenta-usuario/secciones/prestamos/prestamos.module';
+import { TarjetaCreditoModule } from './modules/cuenta-usuario/secciones/tarjeta-credito/tarjeta-credito.module';
+import { PagarTarjetaComponent } from './modules/cuenta-usuario/secciones/pagar-tarjeta/pagar-tarjeta.component';
+import { PagarPrestamoComponent } from './modules/cuenta-usuario/secciones/pagar-prestamo/pagar-prestamo.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +37,8 @@ import { TransferirComponent } from './modules/cuenta-usuario/secciones/transfer
     PrestamosycreditosComponent,
     DatosPersonalesComponent,
     TransferirComponent,
+    PagarTarjetaComponent,
+    PagarPrestamoComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,9 @@ import { TransferirComponent } from './modules/cuenta-usuario/secciones/transfer
     RegistroModule,
     TodasCuentasModule,
     InicioModule,
-    AppRoutingModule
+    TarjetaCreditoModule,
+    AppRoutingModule,
+    PrestamosModule
   ],
   providers: [
     {

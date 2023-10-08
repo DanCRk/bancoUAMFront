@@ -9,4 +9,6 @@ export interface AppProperties {
     urlBorrarUsuario:string;
     urlToken:string
     urlTransaccion:string
+    urlSolicitaPrestamo:string
+    urlSolicitaTarjetaCredito:string
 }

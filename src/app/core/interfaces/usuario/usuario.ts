@@ -4,6 +4,8 @@ export interface CuentaUsuario {
   tarjetaCredito: TarjetaCredito;
   prestamos: Array<Prestamo>;
   transacciones:Array<Transaccion>
+  pagosPrestamo:Array<Transaccion>
+  transaccionesCredito:Array<Transaccion>
 }
 
 export interface Usuario {
@@ -45,6 +47,7 @@ export interface Transaccion{
   descripcion:string
   cuenta_remitente:string
   cuenta_destinatario:string
+  isAdd:number
 }
 
 export interface Prestamo {

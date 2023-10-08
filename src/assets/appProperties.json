@@ -8,5 +8,8 @@
     "urlEditarUsuario":"https://bancouam.tplinkdns.com:8012/bancoUAM/cuenta/editarUsuario",
     "urlBorrarUsuario":"https://bancouam.tplinkdns.com:8012/bancoUAM/cuenta/borrarUsuario",
     "urlUsuario":"https://bancouam.tplinkdns.com:8012/bancoUAM/cuenta/usuario",
-    "urlTransaccion":"https://bancouam.tplinkdns.com:8013/bancoUAM/cuenta/transferencia"
+    "urlTransaccion":"https://bancouam.tplinkdns.com:8013/bancoUAM/cuenta/transferencia",
+    "urlSolicitaPrestamo":"https://bancouam.tplinkdns.com:8012/bancoUAM/cuenta/solicitaPrestamo",
+    "urlSolicitaTarjetaCredito":"https://bancouam.tplinkdns.com:8012/bancoUAM/cuenta/solicitaTarjetaCredito"
+
 }

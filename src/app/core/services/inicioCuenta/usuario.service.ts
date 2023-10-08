@@ -20,6 +20,8 @@ export class UsuarioService {
   private urlBorrarUsuario = this.appProperties.config?.urlBorrarUsuario;
   private urlEditarUsuario = this.appProperties.config?.urlEditarUsuario;
   private urlTransaccion = this.appProperties.config?.urlTransaccion;
+  private urlSolicitaPrestamo = this.appProperties.config?.urlSolicitaPrestamo;
+  private urlSolicitaTarjetaCredito = this.appProperties.config?.urlSolicitaTarjetaCredito;
 
   constructor(private appProperties: ConfigService, private http: HttpClient) {this.usuarioss = []}
 
@@ -75,6 +77,34 @@ export class UsuarioService {
     params = params.append('descripcion', transaccion.descripcion);
     params = params.append('tipo', transaccion.tipo);
     return this.http.get<any>(this.urlTransaccion!, {
+      headers: headers,
+      params: params,
+    });
+  }
+
+  solicitaPrestamo(idUsuario: number): Observable<any> {
+    let headers = new HttpHeaders();
+    let params = new HttpParams();
+    headers = headers.append(
+      'Authorization',
+      'Bearer ' + sessionStorage.getItem('token')
+    );
+    params = params.append('id_usuario', idUsuario);
+    return this.http.get<any>(this.urlSolicitaPrestamo!, {
+      headers: headers,
+      params: params,
+    });
+  }
+
+  solicitaTarjetaCredito(idUsuario: number): Observable<any> {
+    let headers = new HttpHeaders();
+    let params = new HttpParams();
+    headers = headers.append(
+      'Authorization',
+      'Bearer ' + sessionStorage.getItem('token')
+    );
+    params = params.append('id_usuario', idUsuario);
+    return this.http.get<any>(this.urlSolicitaTarjetaCredito!, {
       headers: headers,
       params: params,
     });

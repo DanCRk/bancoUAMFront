@@ -73,6 +73,16 @@ export class MenuService {
               url: 'cuenta/inicio',
               subsubmenus: null,
             },
+            {
+              titulo: 'Tu Tarjeta Credito',
+              url: 'cuenta/tarjetaCredito',
+              subsubmenus: null,
+            },
+            {
+              titulo: 'Tu Prestamo',
+              url: 'cuenta/prestamos',
+              subsubmenus: null,
+            },
           ],
         },
         {
@@ -92,7 +102,7 @@ export class MenuService {
           submenus: [
             {
               titulo: 'A tarjeta de credito',
-              url: 'cuenta/pagar/tarjetacredito',
+              url: 'cuenta/pagar/tarjetaCredito',
               subsubmenus: null,
             },
             {

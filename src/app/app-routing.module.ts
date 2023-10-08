@@ -13,6 +13,10 @@ import { LoginComponent } from './modules/inicio/secciones/login/login.component
 import { CuentaUsuarioComponent } from './modules/cuenta-usuario/componentes/cuenta-usuario.component';
 import { DatosPersonalesComponent } from './modules/cuenta-usuario/secciones/datos-personales/datos-personales.component';
 import { TransferirComponent } from './modules/cuenta-usuario/secciones/transferir/transferir.component';
+import { PrestamosComponent } from './modules/cuenta-usuario/secciones/prestamos/prestamos.component';
+import { TarjetaCreditoComponent } from './modules/cuenta-usuario/secciones/tarjeta-credito/tarjeta-credito.component';
+import { PagarTarjetaComponent } from './modules/cuenta-usuario/secciones/pagar-tarjeta/pagar-tarjeta.component';
+import { PagarPrestamoComponent } from './modules/cuenta-usuario/secciones/pagar-prestamo/pagar-prestamo.component';
 
 const routes: Routes = [
   {
@@ -84,6 +88,26 @@ const routes: Routes = [
     path: 'cuenta/transferir/acuentasbbuam',
     component: TransferirComponent,
     title: 'prestamos y creditos | BBUAM',
+  },
+  {
+    path: 'cuenta/tarjetaCredito',
+    component: TarjetaCreditoComponent,
+    title: 'Tarjeta de Credito | BBUAM',
+  },
+  {
+    path: 'cuenta/prestamos',
+    component: PrestamosComponent,
+    title: 'Prestamo | BBUAM',
+  },
+  {
+    path: 'cuenta/pagar/tarjetaCredito',
+    component: PagarTarjetaComponent,
+    title: 'Pagar Tarjeta Credito | BBUAM',
+  },
+  {
+    path: 'cuenta/pagar/prestamos',
+    component: PagarPrestamoComponent,
+    title: 'Pagar Prestamo | BBUAM',
   },
   {
     path: '**',

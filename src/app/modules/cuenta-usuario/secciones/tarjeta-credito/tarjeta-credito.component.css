@@ -1,0 +1,244 @@
+
+figure {
+    margin: 0;
+  }
+  
+  .bank {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Ubuntu", sans-serif;
+    color: rgb(0, 0, 0);
+  }
+  
+  .mobile {
+    max-width: 600px;
+    width: 90%;
+    height: 95%;
+    background-color: var(--black-color);
+    border-radius: 35px;
+    padding: 0 20px;
+    padding-bottom: 10px;
+    color: white;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    margin: 20px 0;
+  }
+  
+  .profile__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #96edc9;
+    border-radius: 40%;
+    margin: 0;
+  }
+  
+  .profile__avatar img {
+    width: 50%;
+  }
+  
+  .profile__name {
+    color: white;
+    font-weight: 600;
+    margin: 0 20px;
+    font-size: 15px;
+  }
+  
+  .balance {
+    color: white;
+    margin: 20px 0;
+  }
+  
+  .balance__text {
+    font-size: 15px;
+    color: #979797;
+    margin-bottom: 10px;
+  }
+  
+  .balance__amount {
+    font-weight: 600;
+    font-size: 36px;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: rgb(48, 188, 238);
+    background: linear-gradient(
+      90deg,
+      var(--amarillo-principal) 0%,
+      var(--amarillo-secundario) 100%
+    );
+    margin: 20px 0;
+    border-radius: 20px;
+    padding: 25px 30px;
+  }
+  
+  .card__information {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card__information__text {
+    font-size: 20px;
+    color: #ffffff;
+    line-height: 26px;
+    font-weight: 600;
+    margin-right: 25px;
+  }
+  
+  .card__button {
+    width: 100%;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    line-height: 45px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s;
+  }
+  
+  .nav {
+    display: flex;
+  }
+  
+  .tabs {
+    min-height: 35%;
+  }
+  
+  .nav__tab {
+    font-size: 16px;
+    font-weight: 600;
+    color: #979797;
+    width: 150px;
+    cursor: pointer;
+  }
+  
+  .nav__tab--active {
+    color: var( --amarillo-principal);
+  }
+  
+  .indicator {
+    display: inline-block;
+    background-color: #38c1ff;
+    height: 4px;
+    border-radius: 20px;
+    vertical-align: 3px;
+    transform: translate(calc(var(--i) * 150px));
+    transition-duration: 0.3s;
+  }
+  
+  .content {
+    margin-top: 15px;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    height: 0;
+  }
+  
+  .content:first-child {
+    opacity: 1;
+    height: auto;
+  }
+  
+  .today {
+    display: flex;
+    justify-content: space-between;
+    color: #d5d5d5;
+  }
+  
+  .transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .transaction__who {
+    display: flex;
+    align-items: center;
+  }
+  
+  .transaction__who figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    margin-right: 20px;
+  }
+  
+  .transaction__who img {
+    width: 40%;
+  }
+  
+  .transaction__who__name {
+    font-weight: 600;
+    margin-bottom: 4px;
+    
+  }
+  
+  .transaction__who__type {
+    color: #d5d5d5;
+    font-size: 13px;
+  }
+  
+  .transaction__data__amount {
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-align: right;
+  }
+  
+  .transaction__data__amount--depot {
+    color: #58c87e;
+  }
+  
+  .transaction__data__amount--menos{
+    color: #c85858;
+  }
+  
+  .transaction__data__date {
+    color: #d5d5d5;
+    font-size: 13px;
+    text-align: right;
+  }
+  
+  .transaction__who--apple figure,
+  .transaction__who--amazon figure {
+    background-color: var(--amarillo-principal);
+  }
+  
+  .transaction__who--tom figure {
+    background-color: #5cdfac;
+  }
+  
+  .transaction__who--tom figure img,
+  .transaction__who--amazon figure img {
+    width: 50%;
+  }
+  
+  .card__button:hover{
+    box-shadow: -3px 2px 19px var(--black-color);
+  }
+  
+  .esconder__signo{
+    display: none;
+  }
+
+  .extender{
+    margin-top: 300px;
+    margin-bottom: 350px;
+  }
+  

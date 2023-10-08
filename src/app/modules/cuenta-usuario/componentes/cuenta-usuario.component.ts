@@ -43,7 +43,8 @@ export class CuentaUsuarioComponent implements OnInit {
           this.router.navigateByUrl('inicio');
         });
     } else {
-      this.usuarioService
+      if(this.usuarioService.usuarioss[0]==null){
+        this.usuarioService
         .getUsuario(sessionStorage.getItem('idUser'))
         .subscribe({
           next: (e) => {
@@ -55,14 +56,19 @@ export class CuentaUsuarioComponent implements OnInit {
             let cadena = e.cuenta.numeroCuenta;
             let resultado = cadena.match(/.{1,4}/g);
             this.usuario.cuenta.numeroCuenta = resultado.join(' ');
-            cadena = this.usuario.tarjetaCredito?.numero_tarjeta;
-            this.usuario.tarjetaCredito.numero_tarjeta = cadena
+            if(this.usuario.tarjetaCredito!=null){
+              let cadena2 = this.usuario.tarjetaCredito?.numero_tarjeta;
+            this.usuario.tarjetaCredito.numero_tarjeta = cadena2
               .match(/.{1,4}/g)
               .join(' ');
+            }
 
           },
           error: (e) => {},
         });
+      }else{
+        this.usuario = this.usuarioService.usuarioss[0]
+      }
     }
     this.menuService.setDatosMenu(2);
   }

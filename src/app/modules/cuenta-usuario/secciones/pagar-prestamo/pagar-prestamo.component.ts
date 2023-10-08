@@ -4,30 +4,20 @@ import { UsuarioService } from 'src/app/core/services/inicioCuenta/usuario.servi
 import { UtilService } from 'src/app/core/services/util/util.service';
 
 @Component({
-  selector: 'app-transferir',
-  templateUrl: './transferir.component.html',
-  styleUrls: ['./transferir.component.css'],
+  selector: 'app-pagar-prestamo',
+  templateUrl: './pagar-prestamo.component.html',
+  styleUrls: ['./pagar-prestamo.component.css'],
 })
-export class TransferirComponent {
+export class PagarPrestamoComponent {
   monto: number;
-  cuenta_destinataria: string;
-  concepto: string;
+  concepto: string = 'Pago a Prestamo';
   descripcion: string;
 
   constructor(private util: UtilService, private usuario: UsuarioService) {}
 
   checkInputs(): boolean {
     let pasa = true;
-
-    if (this.cuenta_destinataria.length < 19) {
-      pasa = false;
-      this.util.enviarAlerta(
-        'warning',
-        this.util.colorWarning,
-        'Error en el formulario',
-        'Formato en el campo cuenta destinataria invalido'
-      );
-    } else if (this.monto < 0) {
+    if (this.monto < 0) {
       pasa = false;
       this.util.enviarAlerta(
         'warning',
@@ -61,7 +51,7 @@ export class TransferirComponent {
       let transaccion: Transaccion = {
         isAdd: 0,
         concepto: this.concepto,
-        cuenta_destinatario: this.cuenta_destinataria,
+        cuenta_destinatario: null,
         cuenta_remitente: this.usuario.usuarioss[0].cuenta.numeroCuenta.replace(
           ' ',
           ''
@@ -72,7 +62,7 @@ export class TransferirComponent {
         monto: this.monto,
         nombre_destinatario: null,
         nombre_remitente: null,
-        tipo: 1,
+        tipo: 3,
       };
       console.log(transaccion);
       this.usuario.sendTransaccion(transaccion).subscribe({
@@ -85,12 +75,10 @@ export class TransferirComponent {
               let resultado = cadena.match(/.{1,4}/g);
               this.usuario.usuarioss[0].cuenta.numeroCuenta =
                 resultado.join(' ');
-
-              if (e.tarjetaCredito != null) {
-                let cadena2 = e.tarjetaCredito?.numero_tarjeta;
-                this.usuario.usuarioss[0].tarjetaCredito.numero_tarjeta =
-                  cadena2.match(/.{1,4}/g).join(' ');
-              }
+              cadena = e.tarjetaCredito?.numero_tarjeta;
+              this.usuario.usuarioss[0].tarjetaCredito.numero_tarjeta = cadena
+                .match(/.{1,4}/g)
+                .join(' ');
             },
             error: (e) => {},
           });

@@ -7,5 +7,6 @@
     "urlRegistro":"https://bancouam.tplinkdns.com:8010/bancoUAM/seguridad/registro",
     "urlEditarUsuario":"https://bancouam.tplinkdns.com:8012/bancoUAM/cuenta/editarUsuario",
     "urlBorrarUsuario":"https://bancouam.tplinkdns.com:8012/bancoUAM/cuenta/borrarUsuario",
-    "urlUsuario":"https://bancouam.tplinkdns.com:8012/bancoUAM/cuenta/usuario"
+    "urlUsuario":"https://bancouam.tplinkdns.com:8012/bancoUAM/cuenta/usuario",
+    "urlTransaccion":"https://bancouam.tplinkdns.com:8013/bancoUAM/cuenta/transferencia"
 }
