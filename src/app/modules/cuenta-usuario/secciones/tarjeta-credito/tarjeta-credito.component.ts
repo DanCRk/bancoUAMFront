@@ -58,16 +58,14 @@ export class TarjetaCreditoComponent implements OnInit {
         });
       }else{
         this.usuario = this.usuarioService.usuarioss[0]
-        if (this.usuario.prestamos == null) {
+        if (this.usuario.tarjetaCredito == null) {
           this.visible = false;
         } else {
           this.visible = true;
         }
       }
     }
-
-    console.log(this.usuario.transacciones)
-    
+  
 
     this.menuService.setDatosMenu(2);
   }
