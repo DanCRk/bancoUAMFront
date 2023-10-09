@@ -1,6 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { ConfigService } from '../config/configService.service';
 import { Menu } from '../../interfaces/menu/menu';
+import { UsuarioService } from '../inicioCuenta/usuario.service';
 
 @Injectable({
   providedIn: 'root',
@@ -17,11 +18,13 @@ export class MenuService {
     menus: [],
   };
 
-  constructor(private appProperties: ConfigService) {}
+  constructor(private appProperties: ConfigService,private usuarioService:UsuarioService) {}
 
   setDatosMenu(categoria: number) {
+    
     this.actualizatBotonesDerecha.emit(categoria);
     if (categoria == 1) {
+      this.usuarioService.usuarioss.pop()
       this.menu.menus = [
         {
           titulo: 'CUENTA',
