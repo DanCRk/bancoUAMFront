@@ -75,6 +75,7 @@ export class TarjetaCreditoComponent implements OnInit {
   }
 
   solicitaTarjetaCredito() {
+    console.log(this.usuarioService.usuarioss)
     this.usuarioService
       .solicitaTarjetaCredito(
         this.usuarioService.usuarioss[0].usuairo.idUsuario
