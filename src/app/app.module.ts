@@ -29,6 +29,7 @@ import { PrestamosModule } from './modules/cuenta-usuario/secciones/prestamos/pr
 import { TarjetaCreditoModule } from './modules/cuenta-usuario/secciones/tarjeta-credito/tarjeta-credito.module';
 import { PagarTarjetaComponent } from './modules/cuenta-usuario/secciones/pagar-tarjeta/pagar-tarjeta.component';
 import { PagarPrestamoComponent } from './modules/cuenta-usuario/secciones/pagar-prestamo/pagar-prestamo.component';
+import { SimularCompraComponent } from './modules/cuenta-usuario/secciones/simular-compra/simular-compra.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { PagarPrestamoComponent } from './modules/cuenta-usuario/secciones/pagar
     TransferirComponent,
     PagarTarjetaComponent,
     PagarPrestamoComponent,
+    SimularCompraComponent,
   ],
   imports: [
     BrowserModule,

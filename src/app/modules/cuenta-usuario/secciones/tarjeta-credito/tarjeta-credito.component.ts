@@ -64,6 +64,7 @@ export class TarjetaCreditoComponent implements OnInit {
           this.visible = true;
         }
       }
+      console.log(this.usuario.transacciones)
     }
   
 

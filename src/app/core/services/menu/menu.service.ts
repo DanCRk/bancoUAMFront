@@ -106,7 +106,10 @@ export class MenuService {
             {
               titulo: 'A tarjeta de credito',
               url: 'cuenta/pagar/tarjetaCredito',
-              subsubmenus: null,
+              subsubmenus: [{
+                titulo:'Simular Compra',
+                url:'cuenta/pagar/tarjetaCredito/simularCompra'
+              }],
             },
             {
               titulo: 'A prestamos BBUAM',

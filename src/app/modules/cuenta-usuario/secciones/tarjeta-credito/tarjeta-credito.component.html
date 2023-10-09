@@ -57,7 +57,9 @@
           <div
             class="transaction"
             *ngFor="let transaccion of usuario?.transacciones"
-            [ngClass]="{ esconder__signo: transaccion?.tipo != 2 }"
+            
+            [class.esconder__signo]="transaccion?.tipo == 0 || transaccion?.tipo == 3"
+            
           >
             <div class="transaction__who transaction__who--apple">
               <figure><img src="https://i.ibb.co/Br7zP94/apple.png" /></figure>
@@ -74,14 +76,14 @@
               <div
                 class="transaction__data__amount"
                 [ngClass]="{
-                  'transaction__data__amount--menos': transaccion.nombre_remitente ==null,
-                  'transaction__data__amount--depot': transaccion.isAdd == 1
+                  'transaction__data__amount--menos': transaccion?.tipo == 4,
+                  'transaction__data__amount--depot':transaccion?.tipo != 4,
                 }"
               >
-                <span [ngClass]="{ esconder__signo: transaccion.isAdd == 1 }">
+                <span [ngClass]="{ esconder__signo: transaccion?.tipo!=4 }">
                   -
                 </span>
-                <span [ngClass]="{ esconder__signo: transaccion.isAdd == 0 }">
+                <span [ngClass]="{ esconder__signo: transaccion?.tipo==4 }">
                   +
                 </span>
                 {{ transaccion.monto | currency }}

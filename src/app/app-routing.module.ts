@@ -17,6 +17,7 @@ import { PrestamosComponent } from './modules/cuenta-usuario/secciones/prestamos
 import { TarjetaCreditoComponent } from './modules/cuenta-usuario/secciones/tarjeta-credito/tarjeta-credito.component';
 import { PagarTarjetaComponent } from './modules/cuenta-usuario/secciones/pagar-tarjeta/pagar-tarjeta.component';
 import { PagarPrestamoComponent } from './modules/cuenta-usuario/secciones/pagar-prestamo/pagar-prestamo.component';
+import { SimularCompraComponent } from './modules/cuenta-usuario/secciones/simular-compra/simular-compra.component';
 
 const routes: Routes = [
   {
@@ -108,6 +109,11 @@ const routes: Routes = [
     path: 'cuenta/pagar/prestamos',
     component: PagarPrestamoComponent,
     title: 'Pagar Prestamo | BBUAM',
+  },
+  {
+    path: 'cuenta/pagar/tarjetaCredito/simularCompra',
+    component: SimularCompraComponent,
+    title: 'Simular Compra | BBUAM',
   },
   {
     path: '**',
