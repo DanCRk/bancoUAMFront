@@ -56,8 +56,9 @@ export class PagarTarjetaComponent {
 
   transferir() {
     if (this.checkInputs()) {
-      if(this.usuario.usuarioss[0].tarjetaCredito==null){
-        this.util.enviarAlerta('warning', '#7fffc1', 'Advertencia!', 'no hay tarejtas contratadas!');
+      if(this.usuario.usuarioss[0]?.tarjetaCredito==null){
+        this.util.enviarAlerta('success', '#7fffc1', 'Cuidado!', 'No cuenta con tarjetas de credito');
+        return
       }
       let transaccion: Transaccion = {
         isAdd: 0,
