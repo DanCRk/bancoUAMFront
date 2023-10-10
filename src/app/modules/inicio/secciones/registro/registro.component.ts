@@ -28,13 +28,13 @@ export class RegistroComponent {
 
     let pasa = true
 
-    if(this.nombre.length <5){
+    if(this.nombre.length <3){
       pasa=false
       this.util.enviarAlerta('warning',this.util.colorWarning,"Error en el formulario", "Formato en el campo nombre invalido")
-    }else if(this.apellido.length <5){
+    }else if(this.apellido.length <3){
       pasa=false
       this.util.enviarAlerta('warning',this.util.colorWarning,"Error en el formulario", "Formato en el campo apellido invalido")
-    }else if(this.direccion.length <20){
+    }else if(this.direccion.length <5){
       pasa=false
       this.util.enviarAlerta('warning',this.util.colorWarning,"Error en el formulario", "Formato en el campo direccion invalido")
     }else if(!this.email.match(this.util.emailExp)){
