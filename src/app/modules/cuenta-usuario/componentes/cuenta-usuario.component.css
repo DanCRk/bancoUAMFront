@@ -141,8 +141,6 @@ figure {
 
 .content {
   margin-top: 15px;
-  user-select: none;
-  pointer-events: none;
   opacity: 0;
   height: 0;
 }
