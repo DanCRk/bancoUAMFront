@@ -319,3 +319,23 @@ a {
     bottom: 100%;
   }
 }
+
+.ngx-pagination .current {
+  padding: .1875rem .625rem !important;
+  background: var(--amarillo-principal) !important;
+  color: #fefefe !important;
+  cursor: default !important;
+}
+
+.ngx-pagination a, .ngx-pagination button {
+  color: #ffffff !important;
+  display: block;
+  padding: .1875rem .625rem;
+  border-radius: 0;
+}
+
+.centrar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}

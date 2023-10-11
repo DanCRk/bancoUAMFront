@@ -63,7 +63,7 @@
           </div>
           <div
             class="transaction"
-            *ngFor="let transaccion of usuario?.transacciones | paginate: { itemsPerPage: 10, currentPage: p }"
+            *ngFor="let transaccion of usuario?.transacciones | paginate: { itemsPerPage: 5, currentPage: p }"
             [ngClass]="{ esconder__signo: transaccion.tipo != 3 }"
           >
             <div class="transaction__who transaction__who--apple">
@@ -89,7 +89,7 @@
               </div>
             </div>
           </div>
-          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          <pagination-controls class="centrar" (pageChange)="p = $event"></pagination-controls>
         </div>
       </div>
     </div>
