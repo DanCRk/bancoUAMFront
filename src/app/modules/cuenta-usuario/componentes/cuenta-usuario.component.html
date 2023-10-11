@@ -21,7 +21,7 @@
           <div class="indicator"></div>
           <div class="contents">
               <div class="content">
-                  <div class="transaction" *ngFor="let transaccion of usuario?.transacciones">
+                  <div class="transaction" *ngFor="let transaccion of usuario?.transacciones | paginate: { itemsPerPage: 10, currentPage: p }">
                       <div class="transaction__who transaction__who--apple">
                           <figure><img src="https://i.ibb.co/Br7zP94/apple.png"></figure>
                           <div class="transaction__who__about">
@@ -38,6 +38,7 @@
                           <div class="transaction__data__date">{{transaccion.fecha_transaccion | date:'dd MMM h:mm a'}}</div>
                       </div>
                   </div>
+                  <pagination-controls (pageChange)="p = $event"></pagination-controls>
               </div>
           </div>
       </div>

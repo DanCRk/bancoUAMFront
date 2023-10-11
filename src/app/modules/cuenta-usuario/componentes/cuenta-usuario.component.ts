@@ -17,6 +17,8 @@ import { MessageService } from 'primeng/api';
 export class CuentaUsuarioComponent implements OnInit {
   usuario: CuentaUsuario;
 
+  p: number = 1;
+
   copy: boolean;
 
   respuesta: string;

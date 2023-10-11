@@ -13,6 +13,8 @@ import { UtilService } from 'src/app/core/services/util/util.service';
 export class PrestamosComponent implements OnInit {
   usuario: CuentaUsuario;
 
+  p: number = 1;
+
   constructor(
     private util: UtilService,
     private router: Router,

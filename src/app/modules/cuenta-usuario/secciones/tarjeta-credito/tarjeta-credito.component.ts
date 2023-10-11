@@ -13,6 +13,8 @@ import { UtilService } from 'src/app/core/services/util/util.service';
 export class TarjetaCreditoComponent implements OnInit {
   usuario: CuentaUsuario;
 
+  p: number = 1;
+
   visible: boolean;
 
   constructor(
