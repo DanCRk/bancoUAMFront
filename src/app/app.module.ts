@@ -1,4 +1,9 @@
-import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, Injector, NgModule } from '@angular/core';
+import {
+  APP_INITIALIZER,
+  CUSTOM_ELEMENTS_SCHEMA,
+  Injector,
+  NgModule,
+} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,7 +15,7 @@ import { AppProperties } from './core/interfaces/appProperties/app-properties';
 import { ConfigService } from './core/services/config/configService.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TodasCuentasModule } from './modules/inicio/secciones/todas-cuentas/todas-cuentas.module';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 import { RegistroModule } from './modules/inicio/secciones/registro/registro.module';
 import { MessageService } from 'primeng/api';
 import { ErrorInterceptor } from './core/interceptores/error-interceptor.service';
@@ -21,7 +26,7 @@ import { DatosPersonalesComponent } from './modules/cuenta-usuario/secciones/dat
 export function ConfigLoader(injector: Injector): () => Promise<AppProperties> {
   return () => injector.get(ConfigService).loadConfiguration();
 }
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { TransferirComponent } from './modules/cuenta-usuario/secciones/transferir/transferir.component';
 import { TarjetaCreditoComponent } from './modules/cuenta-usuario/secciones/tarjeta-credito/tarjeta-credito.component';
@@ -54,7 +59,7 @@ import { SimularCompraComponent } from './modules/cuenta-usuario/secciones/simul
     InicioModule,
     TarjetaCreditoModule,
     AppRoutingModule,
-    PrestamosModule
+    PrestamosModule,
   ],
   providers: [
     {
@@ -62,15 +67,19 @@ import { SimularCompraComponent } from './modules/cuenta-usuario/secciones/simul
       useFactory: ConfigLoader,
       deps: [Injector],
       multi: true,
-    
     },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
-      multi: true
-    },MessageService,provideAnimations()
+      multi: true,
+    },
+    MessageService,
+    provideAnimations(),
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
   bootstrap: [AppComponent],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}
+
+providers: [];
