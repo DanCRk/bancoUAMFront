@@ -1,14 +1,14 @@
 {
-    "urlToken":"http://localhost:8009/bancoUAM/seguridad/token",
+    "urlToken":"http://localhost:8000/bancoUAM/seguridad/token",
     "user":"us_bancouam",
     "pass":"bancouam123",
-    "urlLogin":"http://localhost:8008/bancoUAM/seguridad/login",
-    "urlMenu":"http://localhost:8011/bancoUAM/menus",
-    "urlRegistro":"http://localhost:8010/bancoUAM/seguridad/registro",
-    "urlEditarUsuario":"http://localhost:8012/bancoUAM/cuenta/editarUsuario",
-    "urlBorrarUsuario":"http://localhost:8012/bancoUAM/cuenta/borrarUsuario",
-    "urlUsuario":"http://localhost:8012/bancoUAM/cuenta/usuario",
-    "urlTransaccion":"http://localhost:8013/bancoUAM/cuenta/transferencia",
-    "urlSolicitaPrestamo":"http://localhost:8012/bancoUAM/cuenta/solicitaPrestamo",
-    "urlSolicitaTarjetaCredito":"http://localhost:8012/bancoUAM/cuenta/solicitaTarjetaCredito"
+    "urlLogin":"http://localhost:8000/bancoUAM/seguridad/login",
+    "urlMenu":"http://localhost:8000/bancoUAM/menus",
+    "urlRegistro":"http://localhost:8000/bancoUAM/seguridad/registro",
+    "urlEditarUsuario":"http://localhost:8000/bancoUAM/cuenta/editarUsuario",
+    "urlBorrarUsuario":"http://localhost:8000/bancoUAM/cuenta/borrarUsuario",
+    "urlUsuario":"http://localhost:8000/bancoUAM/cuenta/usuario",
+    "urlTransaccion":"http://localhost:8000/bancoUAM/cuenta/transferencia",
+    "urlSolicitaPrestamo":"http://localhost:8000/bancoUAM/cuenta/solicitaPrestamo",
+    "urlSolicitaTarjetaCredito":"http://localhost:8000/bancoUAM/cuenta/solicitaTarjetaCredito"
 }
